@@ -1,13 +1,10 @@
 /**
  * API URL for the try-on widget.
  *
- * - Local shop (localhost:8080) → local backend (127.0.0.1:8081)
- * - Vercel / any live site → your deployed backend (HTTPS), NOT localhost
- *
- * After you deploy the backend to Cloud Run, set PRODUCTION_API below
- * and redeploy the frontend to Vercel.
+ * Local dev  → http://127.0.0.1:8081
+ * Production → your AWS Lightsail HTTPS URL (set PRODUCTION_API below)
  */
-const PRODUCTION_API = "https://thursday-investing-suits-injection.trycloudflare.com";
+const PRODUCTION_API = ""; // e.g. "https://vton-api.xxxxx.us-east-1.cs.amazonlightsail.com"
 
 const isLocal =
   location.hostname === "localhost" || location.hostname === "127.0.0.1";
@@ -19,6 +16,6 @@ const VTON_CONFIG = {
 
 if (!isLocal && !VTON_CONFIG.API_BASE) {
   console.warn(
-    "[VTON] Set PRODUCTION_API in js/config.js to your deployed backend URL, then redeploy to Vercel."
+    "[VTON] Set PRODUCTION_API in js/config.js to your Lightsail URL, then redeploy Vercel."
   );
 }

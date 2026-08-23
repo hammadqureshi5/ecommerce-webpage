@@ -27,7 +27,14 @@ load_dotenv()
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 50 * 1024 * 1024  # 50 MB
-CORS(app)  # Phase 2: open for local testing; tighten in Phase 3
+
+# Allow your Vercel shop (and localhost) to call this API.
+_cors_origins = os.environ.get("CORS_ORIGINS", "*")
+CORS(
+    app,
+    origins=[o.strip() for o in _cors_origins.split(",") if o.strip()],
+    supports_credentials=False,
+)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -163,4 +170,4 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", "8081"))
     # Generations can take minutes; disable the reloader so it does not
     # kill an in-flight request when a file changes.
-    app.run(host="127.0.0.1", port=port, debug=True, use_reloader=False)
+    app.run(host="0.0.0.0", port=port, debug=True, use_reloader=False)

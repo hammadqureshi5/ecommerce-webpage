@@ -1,0 +1,10 @@
+.venv
+venv
+__pycache__
+*.pyc
+.env
+.git
+*.pt
+.yolo
+uploads
+prompts/**/DISCARD

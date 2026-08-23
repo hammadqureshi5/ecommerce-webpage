@@ -1,0 +1,26 @@
+{
+  "containers": {
+    "vton-api": {
+      "image": ":vton-backend.vton-api.1",
+      "ports": {
+        "8080": "HTTP"
+      },
+      "environment": {
+        "FLUX_BASE_URL": "REPLACE_WITH_YOUR_FLUX_GPU_URL",
+        "CORS_ORIGINS": "https://ecommerce-webpage-seven.vercel.app,http://localhost:8080"
+      }
+    }
+  },
+  "publicEndpoint": {
+    "containerName": "vton-api",
+    "containerPort": 8080,
+    "healthCheck": {
+      "healthyThreshold": 2,
+      "unhealthyThreshold": 2,
+      "timeoutSeconds": 5,
+      "intervalSeconds": 10,
+      "path": "/health",
+      "successCodes": "200-499"
+    }
+  }
+}
