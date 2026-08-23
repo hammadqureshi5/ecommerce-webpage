@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VTON Shop � Pick a Garment</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div>
+      <h1>VTON Shop</h1>
+      <p>Pick a garment, then try it on with your photo</p>
+    </div>
+    <span class="phase-badge">Phase 1 � UI only</span>
+  </header>
+
+  <main class="container">
+
+    <!-- Step 1: pick Male or Female -->
+    <div class="gender-toggle">
+      <button class="gender-btn active" data-gender="male">Male</button>
+      <button class="gender-btn" data-gender="female">Female</button>
+    </div>
+
+    <!-- Step 2: products grouped by Shirt / Pant / Full body -->
+    <div id="catalog"></div>
+
+  </main>
+
+  <script src="js/products.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>

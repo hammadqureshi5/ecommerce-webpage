@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VTON � Try On</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div>
+      <h1>Virtual Try-On</h1>
+      <p>Upload your photo to see how the garment looks on you</p>
+    </div>
+    <span class="phase-badge">Phase 1 � UI only</span>
+  </header>
+
+  <main class="container">
+
+    <a href="index.html" class="back-link">? Back to shop</a>
+
+    <div class="try-on-layout">
+
+      <!-- Left: selected garment -->
+      <section class="panel">
+        <h2>Selected garment</h2>
+        <div id="selected-product" class="selected-product">
+          <!-- filled by try-on.js -->
+        </div>
+      </section>
+
+      <!-- Right: upload person photo -->
+      <section class="panel">
+        <h2>Your photo</h2>
+        <label class="upload-zone" id="upload-zone">
+          <input type="file" id="person-photo" accept="image/*" />
+          <strong>Click or drop your photo here</strong>
+          <p>Full-body or upper-body photo works best</p>
+        </label>
+        <img id="person-preview" class="preview-img" alt="Your photo preview" />
+
+        <button id="generate-btn" class="primary-btn" disabled>
+          Generate try-on
+        </button>
+
+        <div class="info-box warning">
+          <h4>Phase 1 � no API yet</h4>
+          <p>Clicking Generate will only show what <em>would</em> be sent to the backend in Phase 3. No real image is created yet.</p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Bottom: result area (placeholder for Phase 3) -->
+    <section class="panel" style="margin-top: 1.5rem;">
+      <h2>Result</h2>
+      <div id="result-area" class="result-placeholder">
+        Try-on result will appear here after Phase 3
+      </div>
+      <div id="api-preview" class="info-box" style="display: none;">
+        <h4>API request preview (Phase 3)</h4>
+        <pre id="api-preview-text"></pre>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/products.js"></script>
+  <script src="js/try-on.js"></script>
+</body>
+</html>
