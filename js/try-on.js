@@ -1,18 +1,14 @@
 /**
- * Try-on page logic (Phase 1 � dummy only).
+ * Try-on page logic (Phase 1 — dummy only).
  *
  * Flow:
  *   1. Read ?product= from URL
- *   2. Show the selected garment
+ *   2. Show the selected garment (real photo)
  *   3. User uploads their person photo
  *   4. "Generate" shows what WOULD be sent to the API (no real call yet)
- *
- * Phase 3 will replace the dummy generate() with:
- *   fetch(API_URL + "/api/generate", { method: "POST", body: formData })
  */
 
 (function () {
-  // ?? Read selected product from URL ???????????????????????????????????
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("product");
   const product = getProduct(productId);
@@ -28,7 +24,6 @@
 
   let personFile = null;
 
-  // ?? Guard: bad product id ????????????????????????????????????????????
   if (!product) {
     selectedEl.innerHTML = `
       <p style="color: #c0392b">Product not found. <a href="index.html">Go back to shop</a></p>
@@ -38,11 +33,11 @@
     return;
   }
 
-  // ?? Show selected garment ??????????????????????????????????????????????
-  const catLabel = CATEGORIES.find((c) => c.id === product.category)?.label || product.category;
+  const catLabel =
+    CATEGORIES.find((c) => c.id === product.category)?.label || product.category;
 
   selectedEl.innerHTML = `
-    <div class="thumb" style="background: ${product.color}">${categoryEmoji(product.category)}</div>
+    <img class="thumb-img" src="${product.image}" alt="${product.name}" />
     <div class="details">
       <h3>${product.name}</h3>
       <p>${product.description}</p>
@@ -52,12 +47,6 @@
     </div>
   `;
 
-  function categoryEmoji(categoryId) {
-    const found = CATEGORIES.find((c) => c.id === categoryId);
-    return found ? found.icon : "??";
-  }
-
-  // ?? File upload + preview ????????????????????????????????????????????
   fileInput.addEventListener("change", () => {
     if (fileInput.files[0]) handleFile(fileInput.files[0]);
   });
@@ -88,16 +77,14 @@
     generateBtn.disabled = false;
   }
 
-  // ?? Dummy generate (Phase 1) ?????????????????????????????????????????
   generateBtn.addEventListener("click", () => {
     if (!personFile) return;
 
-    // This is exactly what Phase 3 will send to Cloud Run:
     const apiRequest = {
-      endpoint: "POST /api/generate  (Cloud Run � not connected yet)",
+      endpoint: "POST /api/generate  (Cloud Run — not connected yet)",
       fields: {
         image_a: `person photo: ${personFile.name} (${Math.round(personFile.size / 1024)} KB)`,
-        image_b: `garment: ${product.name} (garment_type=${product.garment_type})`,
+        image_b: `garment: ${product.name} (${product.image})`,
         vton_type: product.category,
         garment_type: product.garment_type,
         gender: product.gender,
@@ -110,8 +97,8 @@
 
     resultArea.innerHTML = `
       <div style="text-align: center; padding: 2rem;">
-        <p style="font-size: 2rem; margin: 0 0 0.5rem">?</p>
-        <p><strong>Phase 1 � simulated only</strong></p>
+        <p style="font-size: 2rem; margin: 0 0 0.5rem">⏳</p>
+        <p><strong>Phase 1 — simulated only</strong></p>
         <p style="color: #6b7280; font-size: 0.85rem">
           In Phase 3 this area will show the generated try-on image.
         </p>
