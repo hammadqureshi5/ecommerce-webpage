@@ -3,33 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VTON Shop � Pick a Garment</title>
+  <title>StyleHub — Online Outfit Store</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
   <header class="site-header">
-    <div>
-      <h1>VTON Shop</h1>
-      <p>Pick a garment, then try it on with your photo</p>
+    <div class="brand">
+      <h1>StyleHub</h1>
+      <p>Curated outfits for men &amp; women</p>
     </div>
-    <span class="phase-badge">Phase 1 � UI only</span>
+    <nav class="header-nav">
+      <span class="nav-link">New arrivals</span>
+      <span class="nav-link">Sale</span>
+    </nav>
   </header>
 
   <main class="container">
 
-    <!-- Step 1: pick Male or Female -->
     <div class="gender-toggle">
-      <button class="gender-btn active" data-gender="male">Male</button>
-      <button class="gender-btn" data-gender="female">Female</button>
+      <button type="button" class="gender-btn active" data-gender="male">Men</button>
+      <button type="button" class="gender-btn" data-gender="female">Women</button>
     </div>
 
-    <!-- Step 2: products grouped by Shirt / Pant / Full body -->
     <div id="catalog"></div>
 
   </main>
 
+  <footer class="site-footer">
+    <p>Demo store — virtual try-on available on each product.</p>
+  </footer>
+
+  <script src="js/config.js"></script>
   <script src="js/products.js"></script>
+  <script src="js/vton-widget.js"></script>
   <script src="js/shop.js"></script>
 </body>
 </html>

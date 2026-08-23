@@ -1,10 +1,5 @@
 /**
- * Shop page logic.
- *
- * Flow:
- *   1. User picks Male or Female
- *   2. Products show in 3 groups: Shirt, Pant, Full body
- *   3. "Try on" → go to try-on.html?product=<id>
+ * Outfit store — browse products, open VTON widget on "Try on".
  */
 
 (function () {
@@ -16,7 +11,7 @@
   function render() {
     catalogEl.innerHTML = "";
 
-    for (const cat of CATEGORIES) {
+    for (const cat of STORE_CATEGORIES) {
       const products = getProducts(currentGender, cat.id);
       if (!products.length) continue;
 
@@ -24,12 +19,11 @@
       section.className = "category-section";
 
       section.innerHTML = `
-        <h2 class="category-title">${cat.icon} ${cat.label}</h2>
-        <div class="product-grid" id="grid-${cat.id}"></div>
+        <h2 class="category-title">${cat.label}</h2>
+        <div class="product-grid"></div>
       `;
 
       const grid = section.querySelector(".product-grid");
-
       for (const product of products) {
         grid.appendChild(createCard(product));
       }
@@ -46,18 +40,24 @@
       <div class="product-image">
         <img src="${product.image}" alt="${product.name}" loading="lazy"
              onerror="this.style.display='none'; this.parentElement.style.background='${product.color}'" />
-        <span class="garment-label">${product.garment_type}</span>
       </div>
       <div class="product-info">
         <h3>${product.name}</h3>
         <p>${product.description}</p>
-        <span class="product-meta">vton_type: ${product.category}</span>
-        <button class="try-on-btn" data-id="${product.id}">Try on</button>
+        <span class="product-price">${formatPrice(product.price)}</span>
+        <div class="product-actions">
+          <button type="button" class="btn-secondary">Add to cart</button>
+          <button type="button" class="btn-try-on">Try on</button>
+        </div>
       </div>
     `;
 
-    card.querySelector(".try-on-btn").addEventListener("click", () => {
-      window.location.href = `try-on.html?product=${product.id}`;
+    card.querySelector(".btn-try-on").addEventListener("click", () => {
+      VTONWidget.open(product);
+    });
+
+    card.querySelector(".btn-secondary").addEventListener("click", () => {
+      alert("Cart is not implemented in this demo.");
     });
 
     return card;
@@ -73,4 +73,12 @@
   });
 
   render();
+
+  // Support old links: try-on.html?product=... → open widget on load
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get("product");
+  if (productId) {
+    const product = getProduct(productId);
+    if (product) VTONWidget.open(product);
+  }
 })();

@@ -1,0 +1,47 @@
+The first image is the person. The second image is the garment reference.
+
+The person is wearing a shirt with pants. Add the coat from the reference image
+as an outer layer worn over that shirt.
+
+This is layering, not replacement. The shirt stays on underneath and shows at
+the collar, along the front opening if the coat is open, and at the cuffs if the
+coat sleeves are shorter. The coat is long: it continues past the waist over the
+hips and down the thighs to the exact hem length shown in the reference, so it
+covers the waistband and the upper part of the pants.
+
+The pants remain the person's own. Below the coat hem they continue unchanged in
+their original colour, fabric and fit, and if the coat hangs open, the same
+pants show through the opening naturally.
+
+Before drawing, read each of these features off the coat in the second image and
+reproduce it exactly as it appears there. Do not substitute a generic coat for
+any of them, and do not simplify a detail away because it is small:
+
+- Front: single-breasted, with one row of buttons, or double-breasted, with two
+  parallel rows. Count the rows in the reference and reproduce that same number
+  of rows, the same number of buttons in each row, and the same spacing.
+- Collar: notched lapel, peak lapel, shawl collar, stand collar or hood, at the
+  same width, and fastened to the throat or open at the chest as shown.
+- Cuffs: plain, or carrying a buttoned tab, belted strap, ribbed knit or
+  turn-back. Any cuff strap or button in the reference appears on both sleeves.
+- Pockets: flap, welt, patch or slash, at the same height and angle.
+- Waist: belted, tied or unbelted, with the same buckle and hardware.
+- Length: the hem ends at the same point on the body as in the reference.
+- Colour: the same hue and saturation as the reference. Keep it as vivid as it
+  is there; do not wash it toward grey to blend with the scene.
+- Material: the same weave and surface sheen, with the fabric texture still
+  legible at this size.
+
+Give the coat the weight of outerwear: a heavier drape than the shirt, a clear
+outer silhouette wider than the body, long vertical folds falling from the
+shoulders, and a soft shadow cast onto the garments underneath.
+
+Sleeves. Match where the sleeve hem falls on the arm in the reference. A sleeve
+ending on the upper arm above the elbow stays a short sleeve, with the forearm
+bare below it. A sleeve ending at the wrist stays a long sleeve. Keep the same
+width and cut at that hem, whether it is a plain turned edge, a ribbed band or a
+buttoned cuff. Do not lengthen a short sleeve or shorten a long one, and do not
+change it to suit the weather, the setting or the rest of the outfit.
+
+Keep the person's face, hair, skin tone, body shape, hands, pose, footwear,
+background, lighting and camera angle exactly as they are.

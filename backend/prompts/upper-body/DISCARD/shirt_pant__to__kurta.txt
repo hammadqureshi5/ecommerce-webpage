@@ -1,0 +1,32 @@
+The first image is the person. The second image is the garment reference.
+
+The person is wearing a short shirt with pants. Replace only the upper garment
+with the kurta from the reference image.
+
+The new garment is long. It hangs straight from the shoulders and continues past
+the waist, over the hips and down the thighs to the exact hem length shown in the
+reference. The old short shirt hem, the waistband, the belt and the top of the
+pockets are now covered by kurta fabric and must no longer be visible.
+
+The pants remain the person's own. Below the kurta hem they continue unchanged
+in their original colour, fabric and fit, and where the kurta's side slits open,
+the same pants show through naturally.
+
+Match the reference exactly:
+- kurta colour, print, embroidery, border and trim
+- fabric weight and how softly or stiffly it falls
+- neckline, placket, buttons, sleeve length and cuff
+- side slit height and hem shape
+
+Drape the kurta with soft vertical folds that follow the pose and gravity, with
+shadows consistent with the existing lighting.
+
+Sleeves. Match where the sleeve hem falls on the arm in the reference. A sleeve
+ending on the upper arm above the elbow stays a short sleeve, with the forearm
+bare below it. A sleeve ending at the wrist stays a long sleeve. Keep the same
+width and cut at that hem, whether it is a plain turned edge, a ribbed band or a
+buttoned cuff. Do not lengthen a short sleeve or shorten a long one, and do not
+change it to suit the weather, the setting or the rest of the outfit.
+
+Keep the person's face, hair, skin tone, body shape, hands, pose, footwear,
+background, lighting and camera angle exactly as they are.

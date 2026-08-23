@@ -1,0 +1,32 @@
+Replace the person's clothing with the full-body outfit from the
+reference image. Match the reference exactly: same garment category,
+color, pattern, fabric texture, sleeve length, collar and neckline,
+waistline, closure, and total garment length. Fit it naturally to the
+hips, feet and legs with realistic folds and shadows following the pose.
+The face, hair, hands, shoes, pose and background stay exactly as they are.
+
+Sleeves come from the reference and from nothing else. Find where the jacket
+sleeve ends on the arm in the reference and end it in the same place. A suit
+jacket is a long-sleeved garment: unless the reference plainly shows bare
+forearm below a hem that stops above the elbow, the sleeve runs the full length
+of the arm and ends at the wrist. Read it as long whenever the arm is covered
+down to the hand, whenever a shirt cuff or a buttoned jacket cuff shows at the
+wrist, and whenever the arm is hidden or hard to see. Half sleeves and rolled
+sleeves are not part of a tailored suit and are never invented here.
+
+A long sleeve covers the whole forearm. Repaint the arm with jacket cloth from
+the shoulder seam down over the elbow to the wrist, following the arm through
+the pose, with the hem meeting the hand. Bare skin on the arm in the person
+image is never a reason to shorten the sleeve: the person's own suit, its sleeve
+length, and any arm the erase step has cleared are not evidence about the
+reference. No skin shows between the shoulder and the wrist, and no sleeve hem
+lands on the upper arm, at the elbow or on the mid forearm. The only skin
+between the cuff and the fingers is the wrist itself, and only as much as the
+reference leaves bare.
+
+Keep the same width and cut at the sleeve hem as the reference: a plain turned
+edge, a ribbed band, or a buttoned cuff with the same number of buttons at the
+same spacing. Where the reference shows a shirt under the jacket, a band of that
+shirt's cuff shows at each wrist below the jacket sleeve. Do not change the
+sleeve length to suit the weather, the setting, the person's build or the rest of
+the outfit.

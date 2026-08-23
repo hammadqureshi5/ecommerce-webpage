@@ -1,0 +1,26 @@
+The first image is the person. The second image is the garment reference.
+
+Replace the person's clothing with the full-body outfit from the reference image.
+Match the reference exactly: same garment category, colour, pattern, fabric
+texture, sleeve length, collar and neckline, waistline, closure, and total
+garment length. Fit it naturally to the shoulders, waist, hips and legs with
+realistic folds and shadows that follow the pose.
+
+Remove every part of the original outfit. Nothing of the previous garment may
+remain visible at the collar, cuffs, hem or waistline.
+
+
+The person's own clothing says nothing about sleeve length. Short sleeves in the
+first image, and bare skin anywhere on the arm, are never a reason to shorten the
+sleeve: where the reference sleeve reaches the wrist, the forearm is repainted
+with the reference cloth over it, on the left arm and the right arm equally, and
+one arm is never left longer than the other. Keep the same width and cut at the
+hem, whether it is a plain turned edge, a ribbed band or a buttoned cuff. Do not
+change the sleeve length to suit the weather, the setting, the person's build or
+the rest of the outfit.
+
+Keep the person's face, hair, skin tone, body shape, hands, pose, footwear,
+background, lighting and camera angle exactly as they are.
+
+Do not add any layer, jacket, scarf, belt or accessory that is not present in
+the reference image.

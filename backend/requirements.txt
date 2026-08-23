@@ -1,0 +1,14 @@
+flask>=3.0
+flask-cors>=4.0
+requests>=2.31
+python-dotenv>=1.0
+
+# Garment masking (mask.py): YOLO pose + segmentation
+opencv-python-headless
+numpy
+ultralytics
+
+# Clothing classification (classify.py): SigLIP zero-shot
+torch
+transformers
+Pillow
