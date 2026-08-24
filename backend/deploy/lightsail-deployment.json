@@ -1,13 +1,13 @@
 {
   "containers": {
     "vton-api": {
-      "image": ":vton-backend.vton-api.1",
+      "image": ":vton.vton-backend.2",
       "ports": {
         "8080": "HTTP"
       },
       "environment": {
-        "FLUX_BASE_URL": "REPLACE_WITH_YOUR_FLUX_GPU_URL",
-        "CORS_ORIGINS": "https://ecommerce-webpage-seven.vercel.app,http://localhost:8080"
+        "FLUX_BASE_URL": "http://35.224.54.129:5000",
+        "CORS_ORIGINS": "https://ecommerce-webpage-seven.vercel.app,http://localhost:5000,http://127.0.0.1:5000,http://localhost:8080"
       }
     }
   },

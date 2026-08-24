@@ -2,9 +2,10 @@
  * API URL for the try-on widget.
  *
  * Local dev  → http://127.0.0.1:8081
- * Production → your AWS Lightsail HTTPS URL (set PRODUCTION_API below)
+ * Production → AWS Lightsail (Vercel shop calls this)
  */
-const PRODUCTION_API = ""; // e.g. "https://vton-api.xxxxx.us-east-1.cs.amazonlightsail.com"
+const PRODUCTION_API =
+  "https://vton.p12vr5zrn1t66.ap-southeast-1.cs.amazonlightsail.com";
 
 const isLocal =
   location.hostname === "localhost" || location.hostname === "127.0.0.1";

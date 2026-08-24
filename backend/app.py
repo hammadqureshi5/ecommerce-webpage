@@ -101,7 +101,8 @@ def api_generate():
 
     multipart/form-data fields:
         image_a       — person photo (required file)
-        image_b       — garment photo (required file)
+        image_b       — garment photo (file) OR garment_url (http URL)
+        garment_url   — optional garment image URL (server-side fetch; avoids browser CORS)
         garment_type  — optional CSV garment_type (skips garment classify)
         person_outfit — optional CSV person_outfit (skips person classify)
         vton_type     — optional upper_body | lower_body | full_body
@@ -112,9 +113,11 @@ def api_generate():
     try:
         person = _read_file("image_a")
         garment = _read_file("image_b")
+        if garment is None:
+            garment = _fetch_url(request.form.get("garment_url", "").strip())
         if person is None or garment is None:
             return jsonify({
-                "error": "two images are required: image_a (person) and image_b (garment)",
+                "error": "two images are required: image_a (person) and image_b or garment_url",
             }), 400
 
         use_mask = request.form.get("use_mask", "1").strip().lower() not in (
@@ -164,6 +167,31 @@ def _read_file(field: str) -> bytes | None:
     if f and f.filename:
         return f.read()
     return None
+
+
+def _fetch_url(url: str) -> bytes | None:
+    """Download a garment image server-side (Breakout CDN blocks browser CORS)."""
+    if not url or not (url.startswith("http://") or url.startswith("https://")):
+        return None
+    try:
+        import urllib.request
+
+        req = urllib.request.Request(
+            url,
+            headers={
+                "User-Agent": "Mozilla/5.0 (compatible; VTON-Demo/1.0)",
+                "Referer": "https://www.breakout.com.pk/",
+            },
+        )
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = resp.read()
+            if not data:
+                return None
+            log.info("Fetched garment_url (%s bytes) from %s", len(data), url[:80])
+            return data
+    except Exception as e:
+        log.warning("garment_url fetch failed: %s", e)
+        raise pipeline.PipelineError(f"Could not download garment image: {e}") from e
 
 
 if __name__ == "__main__":

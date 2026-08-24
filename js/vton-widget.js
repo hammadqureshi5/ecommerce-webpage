@@ -150,24 +150,18 @@ const VTONWidget = (function () {
     product = null;
   }
 
-  async function fetchGarmentBlob(imageUrl) {
-    const res = await fetch(imageUrl);
-    if (!res.ok) throw new Error("Could not load garment image");
-    return res.blob();
-  }
-
   async function generate() {
     if (!personFile || !product) return;
 
     els.generateBtn.disabled = true;
     showStatus("Generating… this can take a few minutes.", "loading");
 
-    if (!VTON_CONFIG.API_ENABLED) {
+    if (typeof VTON_CONFIG === "undefined" || !VTON_CONFIG.API_ENABLED) {
       els.result.innerHTML = `
         <div class="vton-preview-note">
           <p><strong>Widget ready — API not connected yet</strong></p>
           <p>When you enable <code>API_ENABLED</code> in <code>config.js</code>,
-             this will call <code>POST ${VTON_CONFIG.API_BASE}/api/generate</code>.</p>
+             this will call <code>POST ${VTON_CONFIG?.API_BASE || ""}/api/generate</code>.</p>
         </div>
       `;
       els.result.className = "";
@@ -176,11 +170,30 @@ const VTONWidget = (function () {
       return;
     }
 
+    if (!VTON_CONFIG.API_BASE) {
+      showStatus(
+        "VTON API URL is empty. For local use start the backend on port 8081. For production set PRODUCTION_API in js/config.js.",
+        "error"
+      );
+      els.generateBtn.disabled = false;
+      return;
+    }
+
     try {
-      const garmentBlob = await fetchGarmentBlob(product.image);
+      // Probe backend first so users get a clear message if it is down
+      try {
+        const health = await fetch(`${VTON_CONFIG.API_BASE}/health`, { method: "GET" });
+        if (!health.ok) throw new Error("health check failed");
+      } catch {
+        throw new Error(
+          `Cannot reach VTON backend at ${VTON_CONFIG.API_BASE}. Start it with: cd backend && python app.py`
+        );
+      }
+
       const form = new FormData();
       form.append("image_a", personFile);
-      form.append("image_b", garmentBlob, "garment.jpg");
+      // Send URL so the server fetches the garment (avoids browser CORS on Breakout CDN)
+      form.append("garment_url", product.image);
       form.append("garment_type", product.garment_type);
       form.append("vton_type", product.category);
 
@@ -188,11 +201,21 @@ const VTONWidget = (function () {
         method: "POST",
         body: form,
       });
-      const data = await res.json();
+
+      let data;
+      try {
+        data = await res.json();
+      } catch {
+        throw new Error(`Server returned ${res.status} (not JSON). Is the backend running?`);
+      }
 
       if (!res.ok) {
         const detail = data.body ? ` (${String(data.body).slice(0, 120)}…)` : "";
         throw new Error((data.error || "Try-on failed") + detail);
+      }
+
+      if (!data.images || !data.images[0]) {
+        throw new Error("Backend returned no image. Check Flux GPU status.");
       }
 
       els.result.innerHTML = `<img src="data:image/png;base64,${data.images[0]}" alt="Try-on result" class="vton-result-img" />`;

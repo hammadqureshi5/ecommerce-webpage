@@ -40,16 +40,6 @@ heroes = [
         "mobile": "https://www.breakout.com.pk/cdn/shop/files/Women_Mobile_jpg_97c99a29-9979-491a-9168-8cb618335c8e.jpg?v=1786734988&width=1000",
         "link": "#section-women",
     },
-    {
-        "desktop": "https://www.breakout.com.pk/cdn/shop/files/Boy_Main_Banners_jpg_0c6da39b-c4d7-4eb1-b703-77d4d9e2a84a.jpg?v=1786734995&width=2560",
-        "mobile": "https://www.breakout.com.pk/cdn/shop/files/Boy_Mobile_jpg_264a4519-1878-40fb-a5ca-31c8d355b1e2.jpg?v=1786734988&width=1000",
-        "link": "#section-boys",
-    },
-    {
-        "desktop": "https://www.breakout.com.pk/cdn/shop/files/Girl_Main_Banners_jpg_86e83b3d-6905-4d8b-bd5f-35f88040780d.jpg?v=1786734994&width=2560",
-        "mobile": "https://www.breakout.com.pk/cdn/shop/files/Girl_Mobile_jpg_0542e730-8aa4-47cd-8207-d7fc4a121f1b.jpg?v=1786734988&width=1000",
-        "link": "#section-girls",
-    },
 ]
 
 MEGA_MENU = {
@@ -65,18 +55,6 @@ MEGA_MENU = {
         "accessories": ["Shoes", "Jewellery", "Bags", "Perfumes", "Scarves", "Glasses", "Caps / Hats", "Socks", "Nail Polish"],
         "collections": ["MIND THE GAP", "REMIX"],
     },
-    "boys": {
-        "highlights": ["NEW ARRIVALS", "SPECIAL PRICE"],
-        "clothing": ["Tees", "Polos", "Shirts", "Jeans", "Trousers / Chinos", "Shorts", "Cargo Pants / Shorts", "Co-ords", "Character Shop"],
-        "accessories": ["Shoes", "Gloves", "Caps / Hats", "Socks", "Perfumes / Mists", "Belts", "Watches", "Sunglasses", "Boxers"],
-        "collections": ["PRE-FALL", "made for endless play"],
-    },
-    "girls": {
-        "highlights": ["NEW ARRIVALS", "SPECIAL PRICE"],
-        "clothing": ["Tees / Tops", "Shirts / Frocks", "Jeans / Denim", "Trousers", "Skirts", "Shorts", "Tights", "Co-ords", "Character Shop"],
-        "accessories": ["Shoes", "Gloves", "Caps / Hats", "Socks", "Perfumes / Mists", "Bags", "Belts", "Watches", "Sunglasses"],
-        "collections": ["PRE-FALL", "made for endless play"],
-    },
 }
 
 BEST_SELLERS = {
@@ -84,21 +62,15 @@ BEST_SELLERS = {
     "STRETCH CROPPED FIT DENIM", "CARDIO TANK",
     "PRINTED BUTTON DOWN SHIRT", "STRAIGHT FIT DENIM", "BARREL FIT DENIM", "KIMONO TEXTURED TOP",
     "STRAIGHT FIT PLEATED DENIM", "PINSTRIPE BLAZER",
-    "BOYS DROP SHOULDER CHICAGO BULLS TEE", "BOYS DROP SHOULDER TEE", "BOYS PRINTED TANK TOP",
-    "BOYS STRIPED TEE", "BOYS STRIPER TEE", "BOYS TIE & DYE TEE",
-    "GIRLS BASIC TIGHTS", "GIRLS PRINTED TANK TOP", "GIRLS MOM FIT DENIM", "GIRLS MOM FIT RIPPED DENIM",
-    "GIRLS EMBELLISHED STUDDED TANK TOP", "GIRLS EMBROIDERED FLOWER STRIPED DRESS",
 }
 
 
 def infer_gender(name):
     u = name.upper()
-    if u.startswith("BOYS "):
-        return "boys"
-    if u.startswith("GIRLS "):
-        return "girls"
+    if u.startswith("BOYS ") or u.startswith("GIRLS "):
+        return None  # kids catalog excluded
     women_kw = ("BLOUSE", "KIMONO", "BLAZER", "DRESS", "TOP", "JEGGINGS", "SKIRT", "FROCK", "PLAYSUIT")
-    if any(k in u for k in women_kw) and not u.startswith("BOYS"):
+    if any(k in u for k in women_kw):
         return "female"
     men_kw = ("POLO", "LINEN SHIRT", "DENIM", "TROUSER", "CARGO", "CARROT", "CARPENTER")
     if any(k in u for k in men_kw):
@@ -109,16 +81,16 @@ def infer_gender(name):
 def infer_category(name, gender):
     u = name.upper()
     if "TEE" in u or "TANK" in u or "POLO" in u:
-        return {"male": "tees", "female": "knit", "boys": "tees", "girls": "tops"}.get(gender, "tees")
+        return {"male": "tees", "female": "knit"}.get(gender, "tees")
     if "SHIRT" in u or "BLOUSE" in u or "TOP" in u or "BLAZER" in u or "KIMONO" in u:
-        return {"male": "shirts", "female": "shirts", "boys": "shirts", "girls": "frocks"}.get(gender, "shirts")
+        return {"male": "shirts", "female": "shirts"}.get(gender, "shirts")
     if "DENIM" in u or "JEAN" in u:
-        return {"male": "denims", "female": "denims", "boys": "bottoms", "girls": "bottoms"}.get(gender, "denims")
+        return {"male": "denims", "female": "denims"}.get(gender, "denims")
     if "TROUSER" in u or "SHORT" in u or "CHINO" in u or "TIGHT" in u or "SKIRT" in u or "CAPRI" in u:
-        return {"male": "trousers", "female": "denims", "boys": "bottoms", "girls": "bottoms"}.get(gender, "trousers")
+        return {"male": "trousers", "female": "denims"}.get(gender, "trousers")
     if "SET" in u or "COORD" in u or "OUTFIT" in u or "PLAYSUIT" in u:
-        return {"male": "tees", "female": "coords", "boys": "coords", "girls": "coords"}.get(gender, "coords")
-    return {"male": "tees", "female": "knit", "boys": "tees", "girls": "tops"}.get(gender, "tees")
+        return {"male": "tees", "female": "coords"}.get(gender, "coords")
+    return {"male": "tees", "female": "knit"}.get(gender, "tees")
 
 
 def vton_meta(name, gender):
@@ -134,6 +106,8 @@ products = []
 for i, (name, image) in enumerate(img_data["products"].items()):
     name = unescape(name)
     gender = infer_gender(name)
+    if gender is None:
+        continue
     pm = price_map.get(name, price_map.get(name.upper(), {"price": 3899, "onSale": False}))
     cat, garment = vton_meta(name, gender)
     fc = infer_category(name, gender)
@@ -152,7 +126,7 @@ for i, (name, image) in enumerate(img_data["products"].items()):
         "garment_type": garment,
     })
 
-out = f"""// Auto-generated from breakout.com.pk scrape — real CDN images
+out = f"""// Auto-generated from breakout.com.pk scrape — real CDN images (Men + Women only)
 const HERO_SLIDES = {json.dumps(heroes, indent=2)};
 
 const MEGA_MENU = {json.dumps(MEGA_MENU, indent=2)};
@@ -160,8 +134,6 @@ const MEGA_MENU = {json.dumps(MEGA_MENU, indent=2)};
 const GENDERS = [
   {{ id: "male", slug: "men", label: "MEN", nav: "Men" }},
   {{ id: "female", slug: "women", label: "WOMEN", nav: "Women" }},
-  {{ id: "boys", slug: "boys", label: "BOYS", nav: "Boys" }},
-  {{ id: "girls", slug: "girls", label: "GIRLS", nav: "Girls" }},
 ];
 
 const FEATURED_CATEGORIES = {{
@@ -176,18 +148,6 @@ const FEATURED_CATEGORIES = {{
     {{ id: "shirts", label: "WOMEN SHIRTS / DRESSES" }},
     {{ id: "denims", label: "WOMEN DENIMS / TROUSERS" }},
     {{ id: "coords", label: "WOMEN CO-ORDS" }},
-  ],
-  boys: [
-    {{ id: "tees", label: "BOYS TEES" }},
-    {{ id: "shirts", label: "BOYS SHIRTS" }},
-    {{ id: "bottoms", label: "BOYS BOTTOMS" }},
-    {{ id: "coords", label: "BOYS CO-ORDS" }},
-  ],
-  girls: [
-    {{ id: "tops", label: "GIRLS TEES / TOPS" }},
-    {{ id: "frocks", label: "GIRLS SHIRTS / FROCKS" }},
-    {{ id: "bottoms", label: "GIRLS BOTTOMS" }},
-    {{ id: "coords", label: "GIRLS CO-ORDS" }},
   ],
 }};
 
@@ -226,4 +186,4 @@ function formatPriceHtml(product) {{
 """
 
 open("js/products.js", "w", encoding="utf-8").write(out)
-print(f"Generated {len(products)} products")
+print(f"Generated {len(products)} products (Men + Women only)")
