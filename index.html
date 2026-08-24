@@ -3,40 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StyleHub — Online Outfit Store</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <title>Best Western Wear &amp; Casual Clothing | Breakout Pakistan</title>
+  <link rel="stylesheet" href="css/style.css?v=20260825" />
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="brand">
-      <h1>StyleHub</h1>
-      <p>Curated outfits for men &amp; women</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Announcement bar (matches breakout.com.pk copy) -->
+  <div class="announcement-bar">
+    <div class="announcement-bar__track">
+      <span>FREE DELIVERY ON ALL PREPAID ORDERS /</span>
+      <span>FRESH STYLES HAVE ARRIVED • SHOP NOW /</span>
+      <span>FREE DELIVERY ON ALL PREPAID ORDERS /</span>
+      <span>FRESH STYLES HAVE ARRIVED • SHOP NOW /</span>
     </div>
-    <nav class="header-nav">
-      <span class="nav-link">New arrivals</span>
-      <span class="nav-link">Sale</span>
+  </div>
+
+  <!-- Header -->
+  <header class="bo-header" id="bo-header">
+    <div class="bo-header__row bo-header__row--mobile">
+      <button type="button" class="bo-icon-btn" id="btn-menu" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <a href="index.html" class="bo-logo">BREAKOUT</a>
+      <div class="bo-header__actions">
+        <button type="button" class="bo-icon-btn" id="btn-search" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+        </button>
+        <button type="button" class="bo-icon-btn bo-cart-btn" id="btn-cart" aria-label="Shopping cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L5 3H2"/></svg>
+          <span class="bo-cart-count" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="bo-nav" aria-label="Main">
+      <div class="bo-nav__item" data-gender="male">
+        <a href="#section-men" class="bo-nav__link">Men</a>
+      </div>
+      <div class="bo-nav__item" data-gender="female">
+        <a href="#section-women" class="bo-nav__link">Women</a>
+      </div>
+      <div class="bo-nav__item" data-gender="boys">
+        <a href="#section-boys" class="bo-nav__link">Boys</a>
+      </div>
+      <div class="bo-nav__item" data-gender="girls">
+        <a href="#section-girls" class="bo-nav__link">Girls</a>
+      </div>
     </nav>
   </header>
 
-  <main class="container">
+  <!-- Mobile menu drawer -->
+  <div class="bo-drawer" id="drawer-menu" aria-hidden="true">
+    <div class="bo-drawer__backdrop" data-close-drawer></div>
+    <aside class="bo-drawer__panel">
+      <div class="bo-drawer__head">
+        <span class="bo-drawer__title">Menu</span>
+        <button type="button" class="bo-drawer__close" data-close-drawer aria-label="Close">&times;</button>
+      </div>
+      <nav class="bo-drawer__nav" id="mobile-nav"></nav>
+    </aside>
+  </div>
 
-    <div class="gender-toggle">
-      <button type="button" class="gender-btn active" data-gender="male">Men</button>
-      <button type="button" class="gender-btn" data-gender="female">Women</button>
-    </div>
+  <!-- Search drawer -->
+  <div class="bo-drawer" id="drawer-search" aria-hidden="true">
+    <div class="bo-drawer__backdrop" data-close-drawer></div>
+    <aside class="bo-drawer__panel">
+      <div class="bo-drawer__head">
+        <span class="bo-drawer__title">Search</span>
+        <button type="button" class="bo-drawer__close" data-close-drawer aria-label="Close">&times;</button>
+      </div>
+      <input type="search" class="bo-search-input" placeholder="Search for..." id="search-input" />
+      <div class="bo-search-hints" id="search-hints"></div>
+      <div class="bo-search-results" id="search-results"></div>
+    </aside>
+  </div>
 
+  <!-- Cart drawer -->
+  <div class="bo-drawer bo-drawer--cart" id="drawer-cart" aria-hidden="true">
+    <div class="bo-drawer__backdrop" data-close-drawer></div>
+    <aside class="bo-drawer__panel">
+      <div class="bo-drawer__head">
+        <span class="bo-drawer__title">Cart (<span id="cart-count-drawer">0</span>)</span>
+        <button type="button" class="bo-drawer__close" data-close-drawer aria-label="Close">&times;</button>
+      </div>
+      <div id="cart-body"></div>
+    </aside>
+  </div>
+
+  <main id="main">
     <div id="catalog"></div>
-
   </main>
 
-  <footer class="site-footer">
-    <p>Demo store — virtual try-on available on each product.</p>
+  <!-- Footer -->
+  <footer class="bo-footer">
+    <div class="bo-footer__newsletter">
+      <h3>Subscribe to <em>newsletter</em></h3>
+      <form class="bo-newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email" aria-label="Email" />
+        <button type="submit" class="bo-btn">Submit</button>
+      </form>
+      <div class="bo-social">
+        <span>Instagram</span>
+        <span>TikTok</span>
+        <span>Facebook</span>
+        <span>YouTube</span>
+      </div>
+    </div>
+
+    <div class="bo-footer__grid">
+      <div>
+        <h4>We are BREAKOUT</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Store location</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Refund policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Track your order</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms &amp; conditions</a></li>
+          <li><a href="#">Exchange &amp; Return</a></li>
+          <li><a href="#">Cancellation policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Blogs</h4>
+        <ul>
+          <li><a href="#">Blogs &amp; News</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Can we help you?</h4>
+        <p><strong>Call us:</strong> +92 311 1100439</p>
+        <p><strong>Timings:</strong><br />Monday to Friday: 10:00 AM to 05:00 PM<br />Saturday: 10:00 AM to 03:00 PM</p>
+        <p><a href="mailto:support@breakout.com.pk">support@breakout.com.pk</a></p>
+      </div>
+    </div>
+
+    <div class="bo-footer__bottom">
+      <p>Copyright © 2026 Breakout</p>
+      <div class="bo-payments">
+        <span>American Express</span>
+        <span>Mastercard</span>
+        <span>Visa</span>
+      </div>
+    </div>
   </footer>
 
-  <script src="js/config.js"></script>
-  <script src="js/products.js"></script>
-  <script src="js/vton-widget.js"></script>
-  <script src="js/shop.js"></script>
+  <script src="js/config.js?v=20260825"></script>
+  <script src="js/products.js?v=20260825"></script>
+  <script src="js/cart.js?v=20260825"></script>
+  <script src="js/product-modal.js?v=20260825"></script>
+  <script src="js/vton-widget.js?v=20260825"></script>
+  <script src="js/ui.js?v=20260825"></script>
+  <script src="js/hero.js?v=20260825"></script>
+  <script src="js/shop.js?v=20260825"></script>
+  <script>
+    window.addEventListener("error", function (e) {
+      if (e.filename && e.filename.indexOf("/js/") !== -1) {
+        console.error("Script error:", e.message, e.filename);
+      }
+    });
+  </script>
 </body>
 </html>

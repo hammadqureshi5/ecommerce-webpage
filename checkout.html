@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Breakout Pakistan</title>
+  <link rel="stylesheet" href="css/style.css?v=20260825" />
+</head>
+<body class="checkout-page">
+
+  <header class="bo-header bo-header--minimal">
+    <div class="bo-header__row">
+      <a href="index.html" class="bo-logo">BREAKOUT</a>
+    </div>
+  </header>
+
+  <main class="checkout-main">
+    <div class="checkout-grid">
+      <section class="checkout-form-wrap">
+        <h1>Checkout</h1>
+        <form id="checkout-form" class="checkout-form">
+          <fieldset>
+            <legend>Contact</legend>
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="tel" name="phone" placeholder="Phone (+92)" required />
+          </fieldset>
+          <fieldset>
+            <legend>Shipping address</legend>
+            <input type="text" name="name" placeholder="Full name" required />
+            <input type="text" name="address" placeholder="Address" required />
+            <div class="checkout-row">
+              <input type="text" name="city" placeholder="City" required />
+              <input type="text" name="postal" placeholder="Postal code" />
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Payment (demo)</legend>
+            <p class="checkout-note">This is a demo checkout — no real payment is processed.</p>
+            <input type="text" name="card" placeholder="Card number" autocomplete="off" />
+            <div class="checkout-row">
+              <input type="text" name="expiry" placeholder="MM/YY" autocomplete="off" />
+              <input type="text" name="cvc" placeholder="CVC" autocomplete="off" />
+            </div>
+          </fieldset>
+          <button type="submit" class="bo-btn bo-btn--full">Place order</button>
+        </form>
+      </section>
+
+      <aside class="checkout-summary">
+        <h2>Order summary</h2>
+        <ul id="checkout-items" class="bo-cart-list"></ul>
+        <p class="checkout-total" id="checkout-total">Total PKR 0</p>
+        <p class="bo-cart-note">Pay in 3 installments available at checkout on breakout.com.pk</p>
+      </aside>
+    </div>
+
+    <div id="checkout-success" class="checkout-success" hidden>
+      <h2>Thank you for your order!</h2>
+      <p>Your demo order has been placed. Order confirmation would be emailed in production.</p>
+      <a href="index.html" class="bo-btn">Continue shopping</a>
+    </div>
+  </main>
+
+  <script src="js/products.js?v=20260825"></script>
+  <script src="js/cart.js?v=20260825"></script>
+  <script src="js/checkout.js?v=20260825"></script>
+</body>
+</html>

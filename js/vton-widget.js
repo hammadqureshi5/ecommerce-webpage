@@ -115,8 +115,7 @@ const VTONWidget = (function () {
       <img class="thumb-img" src="${p.image}" alt="${p.name}" />
       <div class="details">
         <h3>${p.name}</h3>
-        <p>${p.description}</p>
-        <p class="product-price">${formatPrice(p.price)}</p>
+        <p class="product-price">${formatPriceHtml(p)}</p>
       </div>
     `;
   }
