@@ -132,6 +132,10 @@ const VTONWidget = (function () {
   }
 
   function open(p) {
+    if (!p) {
+      console.error("[VTON] open() called without a product");
+      return;
+    }
     ensureDom();
     product = p;
     resetState();

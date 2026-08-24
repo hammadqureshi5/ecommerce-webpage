@@ -49,8 +49,13 @@ const ProductModal = (function () {
 
     overlay.querySelector("#pm-try-on").addEventListener("click", () => {
       if (!product) return;
+      const selected = product;
       close();
-      VTONWidget.open(product);
+      if (typeof VTONWidget !== "undefined") {
+        VTONWidget.open(selected);
+      } else {
+        console.error("[VTON] Widget script failed to load");
+      }
     });
   }
 
