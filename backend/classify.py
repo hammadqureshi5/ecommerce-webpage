@@ -9,7 +9,11 @@ from typing import Any
 import numpy as np
 from PIL import Image, ImageOps
 
-from clothing_taxonomy import GARMENT_TYPES, PERSON_OUTFITS, LabelSpec
+from clothing_taxonomy import (
+    LabelSpec,
+    csv_garment_types,
+    csv_person_outfits,
+)
 
 log = logging.getLogger(__name__)
 
@@ -113,32 +117,42 @@ def _score_classes(
 
 
 def classify_person(image_bytes: bytes) -> list[dict[str, Any]]:
-    """Classify Image 1 → CSV ``person_outfit`` labels, best first."""
+    """Classify Image 1 → CSV ``person_outfit`` labels only, best first."""
     image = _open_rgb(image_bytes)
     if image is None:
         return []
+    classes = csv_person_outfits()
+    if not classes:
+        log.error("no person_outfit labels found in CSV")
+        return []
     t0 = time.perf_counter()
-    results = _score_classes(image, PERSON_OUTFITS)
+    results = _score_classes(image, classes)
     log.info(
-        "person classify: top=%s (%.1f%%) in %.2fs",
+        "person classify: top=%s (%.1f%%) in %.2fs [csv labels=%s]",
         results[0]["label"] if results else "?",
         (results[0]["score"] * 100) if results else 0,
         time.perf_counter() - t0,
+        sorted(classes),
     )
     return results
 
 
 def classify_garment(image_bytes: bytes) -> list[dict[str, Any]]:
-    """Classify Image 2 → CSV ``garment_type`` labels, best first."""
+    """Classify Image 2 → CSV ``garment_type`` labels only, best first."""
     image = _open_rgb(image_bytes)
     if image is None:
         return []
+    classes = csv_garment_types()
+    if not classes:
+        log.error("no garment_type labels found in CSV")
+        return []
     t0 = time.perf_counter()
-    results = _score_classes(image, GARMENT_TYPES)
+    results = _score_classes(image, classes)
     log.info(
-        "garment classify: top=%s (%.1f%%) in %.2fs",
+        "garment classify: top=%s (%.1f%%) in %.2fs [csv labels=%s]",
         results[0]["label"] if results else "?",
         (results[0]["score"] * 100) if results else 0,
         time.perf_counter() - t0,
+        sorted(classes),
     )
     return results

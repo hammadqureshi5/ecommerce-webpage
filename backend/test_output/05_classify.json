@@ -1,0 +1,102 @@
+{
+  "person_image": "2.png",
+  "garment_image": "6.png",
+  "garment_crop": {
+    "cropped": true,
+    "crop_y": 241,
+    "original_size": [
+      840,
+      1260
+    ],
+    "cropped_size": [
+      840,
+      1019
+    ]
+  },
+  "person_classify": [
+    {
+      "label": "shirt_pant",
+      "score": 0.1192,
+      "peak": 0.1773,
+      "best_prompt": "a person wearing a shirt and pants",
+      "margin": 0.0042,
+      "runner_up": "kurta_shalwar",
+      "confident": false
+    },
+    {
+      "label": "kurta_shalwar",
+      "score": 0.115,
+      "peak": 0.1852,
+      "best_prompt": "a person in a long kurta tunic and loose shalwar"
+    },
+    {
+      "label": "suit",
+      "score": 0.0048,
+      "peak": 0.0057,
+      "best_prompt": "a person in a blazer and matching trousers"
+    }
+  ],
+  "garment_classify": [
+    {
+      "label": "shirt",
+      "score": 0.0486,
+      "peak": 0.2746,
+      "best_prompt": "a person modelling a short-sleeve striped t-shirt",
+      "margin": 0.0378,
+      "runner_up": "shirt_pant",
+      "confident": false
+    },
+    {
+      "label": "shirt_pant",
+      "score": 0.0108,
+      "peak": 0.0273,
+      "best_prompt": "a matching t-shirt and pants outfit as one product"
+    },
+    {
+      "label": "pant",
+      "score": 0.01,
+      "peak": 0.0187,
+      "best_prompt": "a pair of jeans or casual pants alone"
+    },
+    {
+      "label": "trouser",
+      "score": 0.0003,
+      "peak": 0.0005,
+      "best_prompt": "a pair of formal trousers alone with no shirt visible"
+    },
+    {
+      "label": "jacket",
+      "score": 0.0,
+      "peak": 0.0,
+      "best_prompt": "a jacket or blazer product photo"
+    },
+    {
+      "label": "coat",
+      "score": 0.0,
+      "peak": 0.0,
+      "best_prompt": "a long coat product photo"
+    },
+    {
+      "label": "shorts",
+      "score": 0.0,
+      "peak": 0.0,
+      "best_prompt": "a pair of shorts alone with no shirt visible"
+    },
+    {
+      "label": "suit",
+      "score": 0.0,
+      "peak": 0.0,
+      "best_prompt": "a matching blazer and trousers outfit"
+    },
+    {
+      "label": "kurta_shalwar",
+      "score": 0.0,
+      "peak": 0.0,
+      "best_prompt": "a complete kurta shalwar outfit product photo"
+    }
+  ],
+  "top": {
+    "person_outfit": "shirt_pant",
+    "garment_type": "shirt"
+  }
+}

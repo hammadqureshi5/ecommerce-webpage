@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Virtual Try-On | Modern Elegance</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter and Playfair Display -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from system prompt -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f6f2f5",
+                      "surface-tint": "#4f6073",
+                      "tertiary-container": "#282a2b",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-primary-container": "#8192a7",
+                      "primary-container": "#1a2b3c",
+                      "on-background": "#1c1b1d",
+                      "on-surface": "#1c1b1d",
+                      "surface-bright": "#fcf8fb",
+                      "outline": "#74777d",
+                      "secondary-fixed-dim": "#c6c5cf",
+                      "inverse-surface": "#313032",
+                      "primary": "#041627",
+                      "inverse-on-surface": "#f3f0f2",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#909192",
+                      "surface-container-highest": "#e5e1e4",
+                      "surface-container-high": "#eae7ea",
+                      "secondary-fixed": "#e3e1ec",
+                      "on-primary-fixed-variant": "#38485a",
+                      "on-tertiary-fixed": "#1a1c1d",
+                      "secondary-container": "#e3e1ec",
+                      "outline-variant": "#c4c6cd",
+                      "background": "#fcf8fb",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "tertiary-fixed": "#e2e2e3",
+                      "on-secondary-fixed": "#1a1b22",
+                      "tertiary": "#141617",
+                      "on-tertiary-fixed-variant": "#454748",
+                      "secondary": "#5d5e66",
+                      "primary-fixed-dim": "#b7c8de",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "surface": "#fcf8fb",
+                      "primary-fixed": "#d2e4fb",
+                      "surface-dim": "#dcd9dc",
+                      "on-tertiary": "#ffffff",
+                      "surface-variant": "#e5e1e4",
+                      "on-secondary-fixed-variant": "#46464e",
+                      "on-primary": "#ffffff",
+                      "surface-container": "#f0edf0",
+                      "on-primary-fixed": "#0b1d2d",
+                      "on-secondary-container": "#63646c",
+                      "inverse-primary": "#b7c8de",
+                      "on-surface-variant": "#44474c",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-padding": "20px",
+                      "unit": "4px",
+                      "stack-sm": "8px",
+                      "stack-md": "24px",
+                      "gutter": "16px",
+                      "stack-lg": "48px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "label-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen relative overflow-hidden">
+<!-- Background Context: Product Page (Desktop) -->
+<div aria-hidden="true" class="hidden md:block w-full max-w-[1280px] mx-auto px-container-padding py-stack-md opacity-40 blur-sm transition-all duration-500">
+<!-- TopAppBar Placeholder -->
+<header class="flex justify-between items-center w-full pb-stack-lg border-b border-surface-variant">
+<div class="font-display-lg text-headline-md tracking-tighter text-primary">MIDNIGHT</div>
+<div class="flex gap-gutter">
+<span class="material-symbols-outlined text-on-surface hover:opacity-70">shopping_bag</span>
+<span class="material-symbols-outlined text-on-surface hover:opacity-70">person</span>
+</div>
+</header>
+<!-- Product Page Content Placeholder -->
+<div class="grid grid-cols-12 gap-gutter pt-stack-lg">
+<div class="col-span-7 flex gap-gutter">
+<div class="w-1/4 space-y-unit">
+<div class="w-full h-32 bg-surface-container rounded-lg"></div>
+<div class="w-full h-32 bg-surface-container rounded-lg"></div>
+<div class="w-full h-32 bg-surface-container rounded-lg"></div>
+</div>
+<div class="w-3/4 h-[800px] bg-surface-container rounded-lg"></div>
+</div>
+<div class="col-span-5 pl-stack-md">
+<div class="font-headline-lg text-headline-lg mb-unit">Tailored Midnight Blazer</div>
+<div class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md">$495.00</div>
+<div class="space-y-stack-md">
+<div class="w-full h-12 bg-surface-container rounded"></div>
+<div class="w-full h-48 bg-surface-container rounded"></div>
+<div class="w-full h-12 bg-primary-container rounded"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-container-padding bg-scrim/40 backdrop-blur-md">
+<!-- Modal Container -->
+<div class="bg-surface-container-lowest w-full max-w-5xl rounded-xl shadow-[0_20px_40px_rgba(26,43,60,0.15)] overflow-hidden flex flex-col h-[921px] max-h-[800px] border border-surface-variant relative">
+<!-- Header -->
+<div class="flex justify-between items-center px-stack-md py-stack-sm border-b border-surface-variant">
+<h2 class="font-headline-md text-headline-md text-primary-container">Virtual Fitting Room</h2>
+<button aria-label="Close modal" class="p-2 text-on-surface-variant hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined text-headline-md">close</span>
+</button>
+</div>
+<!-- Main Content Split -->
+<div class="flex-1 flex flex-col md:flex-row overflow-hidden">
+<!-- Left: Preview Area -->
+<div class="w-full md:w-3/5 bg-surface-container-low relative flex items-center justify-center border-r border-surface-variant overflow-hidden">
+<!-- Main Preview Image / Camera Feed placeholder -->
+<div class="absolute inset-0 flex items-center justify-center p-stack-md">
+<img alt="Virtual Try-On Preview" class="object-cover w-full h-full max-w-md mx-auto rounded-lg shadow-sm" data-alt="A high-quality, evenly lit photograph of a sophisticated fashion model standing straight in a minimalist studio. The model is wearing a sharp, tailored deep navy blazer (the 'Tailored Midnight Blazer') over a simple white top. The lighting is soft and professional, emphasizing the texture and fit of the garment. The background is a clean, bright white canvas, creating a high-contrast editorial look typical of premium fashion retail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhO8J1AewcElmo669_7ovFoeboxAoxcH_T_lDA6Vq4h6K_NdlKsJ-uhOEILIYDgSUVrgVWGlPxFAm3ns7HiQBuk--x2h4erFhJcW0ZW8W01IuncyHtEGGXFnAwjWzxZtX8tlx32QzFk1TrNUpFr5coAw4jFOW5nttwe3X7AV6-_VtLVbL9zqAYDLYTnEMihXSm_LUJ2XWIX1QWdTwEIv2eoRj9BrqxIrb0kbur5UFv7yqaSR9L1PDM"/>
+</div>
+<!-- UI Overlay Elements -->
+<div class="absolute top-stack-md left-stack-md right-stack-md flex justify-between items-start pointer-events-none">
+<div class="bg-surface/80 backdrop-blur-sm px-4 py-2 rounded-full border border-surface-variant shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-body-sm text-primary-container">verified</span>
+<span class="font-label-md text-label-md text-primary-container">Fit Optimized</span>
+</div>
+</div>
+<div class="absolute bottom-stack-md left-0 right-0 flex flex-col items-center justify-center pointer-events-none space-y-2">
+<div class="w-48 h-[1px] bg-primary-container/20 relative">
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-surface-container-lowest px-2 text-[10px] text-on-surface-variant uppercase tracking-widest border border-surface-variant rounded-full">Align Shoulders</div>
+</div>
+</div>
+</div>
+<!-- Right: Controls & Options -->
+<div class="w-full md:w-2/5 p-stack-md flex flex-col overflow-y-auto bg-surface-container-lowest">
+<div class="mb-stack-md">
+<h3 class="font-label-lg text-label-lg text-primary-container uppercase mb-stack-sm">Input Method</h3>
+<div class="flex flex-col gap-unit">
+<button class="w-full bg-primary-container text-on-primary-container hover:opacity-90 transition-opacity font-label-lg text-label-lg py-3 rounded-DEFAULT flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">upload_file</span>
+                                Upload Your Photo
+                            </button>
+<button class="w-full border border-outline text-on-surface hover:bg-surface-container transition-colors font-label-lg text-label-lg py-3 rounded-DEFAULT flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">photo_camera</span>
+                                Use Live Camera
+                            </button>
+</div>
+</div>
+<hr class="border-t border-surface-variant mb-stack-md"/>
+<div class="mb-stack-md">
+<h3 class="font-label-lg text-label-lg text-primary-container uppercase mb-stack-sm">Adjust Fit</h3>
+<!-- Sliders -->
+<div class="space-y-stack-sm">
+<div>
+<div class="flex justify-between mb-unit">
+<label class="font-label-md text-label-md text-on-surface-variant">Scale</label>
+<span class="font-body-sm text-body-sm text-on-surface">100%</span>
+</div>
+<input class="w-full h-1 bg-surface-variant rounded-full appearance-none outline-none focus:ring-2 focus:ring-primary-container accent-primary-container cursor-pointer" max="120" min="80" type="range" value="100"/>
+</div>
+<div>
+<div class="flex justify-between mb-unit">
+<label class="font-label-md text-label-md text-on-surface-variant">Vertical Position</label>
+<span class="font-body-sm text-body-sm text-on-surface">0</span>
+</div>
+<input class="w-full h-1 bg-surface-variant rounded-full appearance-none outline-none focus:ring-2 focus:ring-primary-container accent-primary-container cursor-pointer" max="50" min="-50" type="range" value="0"/>
+</div>
+</div>
+</div>
+<hr class="border-t border-surface-variant mb-stack-md"/>
+<div class="flex-1">
+<h3 class="font-label-lg text-label-lg text-primary-container uppercase mb-stack-sm flex items-center justify-between">
+                            Recently Tried
+                            <span class="material-symbols-outlined text-body-md text-on-surface-variant cursor-pointer hover:text-primary-container">arrow_forward</span>
+</h3>
+<div class="grid grid-cols-3 gap-unit">
+<div class="aspect-square bg-surface-container rounded-md overflow-hidden cursor-pointer hover:opacity-80 transition-opacity border-2 border-transparent">
+<img alt="White Linen Shirt" class="w-full h-full object-cover" data-alt="A close-up, high-quality flat lay product shot of a crisp white linen button-down shirt. The shirt is neatly folded against a soft grey background. The lighting highlights the natural texture and weave of the linen fabric, conveying a premium, relaxed summer aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDratC_Jp2oNSUfFKYS5d6tFpM6d22K4axLsPDqsvFM3xP4j73wf33KIcut9YE8Hacxc65C3LmsRbvm2z1av1Y_mu1XWoii2Oo1Z9Jb8r8KkQ7AqkL4Z4-4kM1FBxlh8MHEQtFk_iFB974n2330kl2pz1WO0cVkWVJe1itX5sA-W4eA_UGuo-ZJAXhQcouZ5b77YgLurO9nAx7VkV0oGsaQ8UhWuq3QmZL9QW_1jmlhiPw0b7fvNDmv"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-md overflow-hidden cursor-pointer hover:opacity-80 transition-opacity border-2 border-primary-container relative">
+<img alt="Tailored Midnight Blazer" class="w-full h-full object-cover" data-alt="A close-up, high-quality flat lay product shot of a deep navy blue tailored blazer. The blazer is presented against a stark white background. The lighting emphasizes the sharp lines of the lapel and the matte finish of the wool-blend fabric, reflecting the brand's sophisticated 'Midnight Editorial' style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4SCc989aCryeU-__Pctjx5VZD9r3kfIkZWKmW1CMT7XD-E7ot-Nc95IFfV9M6-e1UD1PQKIYm6vlqsVYkfzV3gr3pFOEPVBtIHnEqcjcPlOmCkK0GEu_tzuSvzbAnrNLVTsGloEFZVl1_bGLds2LIGq0cxQC5-YVu3IWjAaNCuJbV8hwq40g87WlGegwOTxE-IOcPEIDIZYxST0vZFX4CiOIdkKmO_t1j3WlwbshiaNRY7janHVLs"/>
+<div class="absolute inset-0 bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container fill text-headline-md drop-shadow-sm">check_circle</span>
+</div>
+</div>
+<div class="aspect-square bg-surface-container rounded-md overflow-hidden cursor-pointer hover:opacity-80 transition-opacity border-2 border-transparent">
+<img alt="Silk Scarf" class="w-full h-full object-cover" data-alt="A close-up, high-quality flat lay product shot of an elegant silk scarf featuring a subtle geometric pattern in tones of charcoal and ivory. The scarf is draped artfully on a light grey surface. The lighting is soft and diffused, highlighting the luxurious sheen and fluid drape of the silk material." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH1aGKUstYrJCbvYuulvdS-0YhYVf2bV3Jq7PkbRne9mhlA7DOf1IFGCedAtEwx8n7gi-loyhEgnUNg8MtouPlE6waygkRPORIq75AF092B9_fcbeTZhN1X9bIEoz8C_doA6V7SnkV1lQP58-Mp9Dk6HL_13gy4COdE9C45Jzj6DzK93vqk4LHPyeZYFCuGtVJM7AavRevxFlf6ZgnfyXdpuc32LfDQMH-LOqn1W-xPk5IxjKsbPf1"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="p-stack-md border-t border-surface-variant bg-surface-container-lowest flex justify-between items-center gap-gutter">
+<button class="flex items-center justify-center gap-2 px-stack-md py-3 border border-outline text-on-surface hover:bg-surface-container transition-colors rounded-DEFAULT font-label-lg text-label-lg w-1/3">
+<span class="material-symbols-outlined">photo_camera</span>
+                    Snapshot
+                </button>
+<button class="flex items-center justify-center gap-2 px-stack-md py-3 bg-primary-container text-on-primary-container hover:opacity-90 transition-opacity rounded-DEFAULT font-label-lg text-label-lg flex-1">
+<span class="material-symbols-outlined">shopping_bag</span>
+                    Add to Bag - $495
+                </button>
+</div>
+</div>
+</div>
+</body></html>

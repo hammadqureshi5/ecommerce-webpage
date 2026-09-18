@@ -96,10 +96,10 @@ def infer_category(name, gender):
 def vton_meta(name, gender):
     u = name.upper()
     if "DENIM" in u or "JEAN" in u or "TROUSER" in u or "SHORT" in u or "TIGHT" in u or "SKIRT" in u:
-        return "lower_body", "jeans" if "DENIM" in u or "JEAN" in u else "trouser"
+        return "lower_body", "pant" if "DENIM" in u or "JEAN" in u else "trouser"
     if "DRESS" in u or "PLAYSUIT" in u or "COORD" in u:
         return "full_body", "dress"
-    return "upper_body", "tshirt" if "TEE" in u or "TANK" in u else "shirt"
+    return "upper_body", "shirt"
 
 
 products = []

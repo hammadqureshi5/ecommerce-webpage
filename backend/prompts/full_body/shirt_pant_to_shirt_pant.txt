@@ -1,0 +1,14 @@
+Replace the person's clothing with the full-body outfit from the
+reference image. Match the reference exactly: same garment category,
+color, pattern, fabric texture, sleeve length, collar and neckline,
+waistline, closure, and total garment length. Fit it naturally to the 
+hips, feets and legs with realistic folds and shadows following the pose.
+The face, hair, hands, shoes, pose and background stay exactly as they are.
+With dynamic fields
+
+Sleeves. Match where the sleeve hem falls on the arm in the reference. A sleeve
+ending on the upper arm above the elbow stays a short sleeve, with the forearm
+bare below it. A sleeve ending at the wrist stays a long sleeve. Keep the same
+width and cut at that hem, whether it is a plain turned edge, a ribbed band or a
+buttoned cuff. Do not lengthen a short sleeve or shorten a long sleeve, and do not
+change it to suit the weather, the setting or the rest of the outfit.

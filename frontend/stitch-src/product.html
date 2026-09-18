@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Modern Elegance - Tailored Midnight Blazer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#c6c5cf",
+                        "outline-variant": "#c4c6cd",
+                        "inverse-surface": "#313032",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-surface-variant": "#44474c",
+                        "on-tertiary-fixed": "#1a1c1d",
+                        "tertiary": "#141617",
+                        "surface": "#fcf8fb",
+                        "on-secondary-fixed-variant": "#46464e",
+                        "on-tertiary-container": "#909192",
+                        "secondary-fixed": "#e3e1ec",
+                        "surface-container-low": "#f6f2f5",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1a2b3c",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#eae7ea",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1c1b1d",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#8192a7",
+                        "surface-tint": "#4f6073",
+                        "primary-fixed": "#d2e4fb",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#282a2b",
+                        "primary": "#041627",
+                        "inverse-primary": "#b7c8de",
+                        "primary-fixed-dim": "#b7c8de",
+                        "on-secondary-fixed": "#1a1b22",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "surface-container": "#f0edf0",
+                        "tertiary-fixed": "#e2e2e3",
+                        "surface-container-highest": "#e5e1e4",
+                        "on-error": "#ffffff",
+                        "background": "#fcf8fb",
+                        "on-primary-fixed": "#0b1d2d",
+                        "secondary-container": "#e3e1ec",
+                        "surface-bright": "#fcf8fb",
+                        "surface-dim": "#dcd9dc",
+                        "inverse-on-surface": "#f3f0f2",
+                        "outline": "#74777d",
+                        "on-background": "#1c1b1d",
+                        "on-primary-fixed-variant": "#38485a",
+                        "secondary": "#5d5e66",
+                        "surface-variant": "#e5e1e4",
+                        "on-secondary-container": "#63646c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "stack-sm": "8px",
+                        "container-padding": "20px",
+                        "stack-lg": "48px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcf8fb; color: #1c1b1d; }
+        h1, h2, h3, h4, h5, h6, .brand-font { font-family: 'Playfair Display', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        
+        .gallery-thumb.active { border: 1px solid #041627; }
+        
+        /* Subtle Entrance Animation */
+        .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col pt-20">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full bg-surface shadow-[0_4px_20px_-5px_rgba(26,43,60,0.05)] z-50 transition-colors duration-300">
+<div class="flex justify-between items-center h-20 px-container-padding max-w-[1280px] mx-auto w-full z-50">
+<!-- Brand -->
+<div class="flex-shrink-0">
+<a class="font-display-lg text-headline-md uppercase tracking-widest text-primary" href="#">Modern Elegance</a>
+</div>
+<!-- Navigation Links (Center) -->
+<div class="hidden md:flex space-x-8">
+<a class="text-primary font-label-lg text-label-lg hover:text-primary transition-colors duration-300 border-b border-primary pb-1" href="#">Shop</a>
+<a class="text-secondary font-label-lg text-label-lg hover:text-primary transition-colors duration-300 pb-1" href="#">Collections</a>
+<a class="text-secondary font-label-lg text-label-lg hover:text-primary transition-colors duration-300 pb-1" href="#">Editorial</a>
+<a class="text-secondary font-label-lg text-label-lg hover:text-primary transition-colors duration-300 pb-1" href="#">About</a>
+</div>
+<!-- Actions (Right) -->
+<div class="flex items-center space-x-6 text-primary">
+<button aria-label="search" class="hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+<button aria-label="person" class="hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-2xl">person</span>
+</button>
+<button aria-label="shopping_bag" class="hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-container-padding py-stack-lg">
+<!-- Product Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24 mb-32 fade-up">
+<!-- Image Gallery (Left) -->
+<div class="md:col-span-7 flex flex-col md:flex-row gap-6 h-[819px] min-h-[600px]">
+<!-- Thumbnails (Desktop Vertical) -->
+<div class="hidden md:flex flex-col gap-4 w-24 flex-shrink-0 overflow-y-auto no-scrollbar py-1">
+<button class="gallery-thumb active w-full aspect-[3/4] rounded-sm overflow-hidden bg-surface-container-low" onclick="updateHeroImage(this, 'placeholder1')">
+<img alt="Thumbnail 1" class="w-full h-full object-cover" data-alt="Close-up of a luxurious midnight blue tailored blazer highlighting the fine weave of Italian wool and a sharp lapel. Crisp white light-mode setting, premium editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2j4druwGKn1krtthg1gK5wT2CNQqNmUnjnjZMbsIJXcYspa75WLmJ53362voxHs5hOvVcp-3lYGPxQX-xou45ACcwpf9yu7T_B_WbFyH0WK9tH1az-BiSKGpeeW-QzsCdPxYBBk5YwOSfF3dre8KxgP6cVxCrbavzH18GNlqf7FPZlCy7oIR-re8wevFQTKNpvARybQKJCV6e-Bsa9ywtTuYKgRmlx94jePrXnyJbq3My123Wy7X6"/>
+</button>
+<button class="gallery-thumb w-full aspect-[3/4] rounded-sm overflow-hidden bg-surface-container-low transition-opacity hover:opacity-80" onclick="updateHeroImage(this, 'placeholder2')">
+<img alt="Thumbnail 2" class="w-full h-full object-cover" data-alt="Full length shot of a model wearing the tailored midnight blazer over a white silk blouse, walking confidently in a minimalist bright gallery space. High contrast editorial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5Yaj0xvbH9181I4rEBSAUCG-0TbMW8tw9J6p0Yo9kxu7oVH4owtdBPYBYjg2g762YfHTxWFOm4aTS2Q_lvAs8HnFQvpzriQ6Iu9jD_sL7XSVPGDzY1UElnPQW5iYJYBv9ZSewu5wPbJ0ulFcFjs_Pklm9vkFxeZO4sPbs5J-TNSMBcgQr7ZRBi7UtO-Bff33qBMt48pR8omfFtY179X5bRnaCpShD8BZzFKxnNtnnlr65nVqTtR-b"/>
+</button>
+<button class="gallery-thumb w-full aspect-[3/4] rounded-sm overflow-hidden bg-surface-container-low transition-opacity hover:opacity-80" onclick="updateHeroImage(this, 'placeholder3')">
+<img alt="Thumbnail 3" class="w-full h-full object-cover" data-alt="Detail shot of the blazer cuffs featuring elegant matte dark buttons and impeccable stitching against a soft white background. Luxury fashion macro photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDfVo3CYtuoShlRcAVMu9ORpshW7W3loc7OB2PaFMy59-4BDk6_ST0kwCTPByCUMhFGX4-h9RW9MWNk-Qh5YtEp4NRRtsoijUZnTfChcHzg6tgWVWGQmv3LNNnFuQ7gYbLpzzLGQIZXHG0Eot-57ShqyLZ8loS47jPCuXfOOQ-kuRXCoaMIJYZdEGN-iGBueWcabUJYumz35ksYhLr7mUjJ2oyHPx6PxKBPNrSPOkAso4WnNDP5uu0"/>
+</button>
+<button class="gallery-thumb w-full aspect-[3/4] rounded-sm overflow-hidden bg-surface-container-low transition-opacity hover:opacity-80" onclick="updateHeroImage(this, 'placeholder4')">
+<img alt="Thumbnail 4" class="w-full h-full object-cover" data-alt="Back view of the tailored midnight blazer showing the perfect drape and tailored waistline on a mannequin in a bright white studio setting. Minimalist and clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXGXz0cCDql0iToGsLzONtUTyXCCxIPALewrulQ6ZoNOnkfYIncjp4Z5sjnfflebaxYIUeDBrjSgCtzpfH8vUzl3ex4LYkkoJ5rBI-PumyR1T8Y3b9iDilyHZIU-587C-u27GB7RIfxkjVT8jrJB2egsTCrg-2-RzEjtWEtQOHmVfbDcuoa7DWRL-nEpuy4icsyVlA94srqpuLDugQUXaVu1ZkSrTlB8vB8yk64gOgqRx2HWzHcyx9"/>
+</button>
+</div>
+<!-- Main Hero Image -->
+<div class="relative flex-grow h-full rounded-lg overflow-hidden bg-surface-container-lowest shadow-[0_4px_30px_-5px_rgba(26,43,60,0.08)] group cursor-zoom-in">
+<img alt="Tailored Midnight Blazer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a luxurious midnight blue tailored blazer highlighting the fine weave of Italian wool and a sharp lapel. Crisp white light-mode setting, premium editorial style." id="main-hero-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqGQR9-s-CtGRjA-4SOeqQ0sFmOgrffg-Bnv2PeVcYXQiYqXA0i-x6WUttHe9hR2mDDCF3qdvHUkpsycQtSOaojVB0ObGa5Evm-nt9mDsDGW3mNWaQ5hhVdvNjSbq0vGyFaJwIQCs5aMVzlGbRqVr4NDOnmisVXtAuyi-wje8cPR6CFNjYOp_CDVI3FThiryIGciQ0g37e-I82V91TN0ymCLsidMG90cC0QSkLnG7AsC1DraL1usaK"/>
+<!-- Virtual Try-On Floating Button -->
+<button aria-label="Virtual Fitting Room" class="absolute bottom-6 right-6 bg-surface/90 backdrop-blur-md text-primary p-4 rounded-full shadow-lg flex items-center justify-center hover:bg-surface hover:scale-105 transition-all duration-300 group/vto">
+<span class="material-symbols-outlined text-2xl">view_in_ar</span>
+<span class="absolute right-full mr-4 bg-inverse-surface text-inverse-on-surface font-label-md text-label-md px-3 py-1.5 rounded opacity-0 group-hover/vto:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Virtual Fitting Room</span>
+</button>
+</div>
+<!-- Thumbnails (Mobile Horizontal) -->
+<div class="flex md:hidden gap-4 overflow-x-auto pb-2 snap-x">
+<button class="snap-start w-20 flex-shrink-0 aspect-[3/4] rounded-sm overflow-hidden bg-surface-container-low border border-primary">
+<img class="w-full h-full object-cover" data-alt="Close-up of a luxurious midnight blue tailored blazer highlighting the fine weave of Italian wool and a sharp lapel. Crisp white light-mode setting, premium editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUnet8zwOICvIzM9Ed0oyIEpf6D8VftiNT_BNvFzm3D-0trxGsfcjt9RPvDXNNIdRaAL7Md0nUMNaUFX8Q7keryl9_bhPrYiuxTx1ytvw-N7OCSZfo2aBs13TZ3zTRz03VzgVUX6bVcDFvXCD0XdHWw4RRbd3XetpIoFpXr-WYYKiTjZrhWBLwg-Z8RIam8x_Ls_vCiWvGHkCUahsnheI7V5EMrn6MgdgHKefsLE1iLljf8maN_xZL"/>
+</button>
+<button class="snap-start w-20 flex-shrink-0 aspect-[3/4] rounded-sm overflow-hidden bg-surface-container-low opacity-70">
+<img class="w-full h-full object-cover" data-alt="Full length shot of a model wearing the tailored midnight blazer over a white silk blouse, walking confidently in a minimalist bright gallery space. High contrast editorial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCROHk07xJawRlYXAuS6Tek7e_dLehUaNNQt83tg5yrfG9ooMcm4WMzxs1CPARCqI8f88tDpVdIHgoI4HXh4AmQnaaomfDhlSvHUXkq5PCPA0ZyzGeM0cw3qpIBL30MHI-dHQh0s_tawXITpjeLXfuFVrSa-6SR-Ih3nad7RD3AKNPPSuBcqcCc-vb0My5rocstJcZprkJPHVtng_Tk4YmJEeRKAN8XPBhysT0jJpTojDoq2HKHzqKl"/>
+</button>
+<button class="snap-start w-20 flex-shrink-0 aspect-[3/4] rounded-sm overflow-hidden bg-surface-container-low opacity-70">
+<img class="w-full h-full object-cover" data-alt="Detail shot of the blazer cuffs featuring elegant matte dark buttons and impeccable stitching against a soft white background. Luxury fashion macro photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfH3VpTVgcuUOW9G7Wbs2SKuH2uRp3PBdhURxAg0UslToykCyaTxt19tKXDfbrq6ADEZokORxElfBJFwdysYUUHZYmkX1GXDBsJE7J2YVjaXh-ZIJIRuILFDUpGaR_8ibXSo1LD7kf_rb7oQKtU42wRKhv8QIWaLhMqyyHjmpfJWVjbJLJxG9Wf-KNOisuXe0s29n92_Uyk6DmRA8D-n9RAFA7AMiDHBrtER-AfKTOgbF-nP-BE1ux"/>
+</button>
+</div>
+</div>
+<!-- Product Info (Right) -->
+<div class="md:col-span-5 flex flex-col justify-center">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="flex text-on-surface-variant font-label-md text-label-md mb-6">
+<ol class="inline-flex items-center space-x-2">
+<li><a class="hover:text-primary transition-colors" href="#">Women</a></li>
+<li><span class="material-symbols-outlined text-[16px]">chevron_right</span></li>
+<li><a class="hover:text-primary transition-colors" href="#">Outerwear</a></li>
+<li><span class="material-symbols-outlined text-[16px]">chevron_right</span></li>
+<li aria-current="page" class="text-primary">Blazers</li>
+</ol>
+</nav>
+<h1 class="font-display-lg text-display-lg text-primary mb-2 leading-tight">Tailored Midnight Blazer</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">$1,250.00</p>
+<div class="prose prose-sm max-w-none mb-10 text-on-surface font-body-md text-body-md leading-relaxed">
+<p>Expertly crafted in Italy from a proprietary blend of virgin wool and silk, the Midnight Blazer offers an architectural silhouette with uncompromised fluidity. The sharp peak lapels and structured shoulders project authority, while the nipped waist ensures a feminine drape.</p>
+</div>
+<!-- Color Selection -->
+<div class="mb-8">
+<h3 class="font-label-lg text-label-lg text-primary mb-4 uppercase tracking-wider">Color <span class="font-body-sm text-on-surface-variant normal-case ml-2">— Midnight Navy</span></h3>
+<div class="flex gap-3">
+<button aria-label="Midnight Navy" class="w-8 h-8 rounded-full bg-[#1A2B3C] ring-1 ring-offset-2 ring-primary focus:outline-none"></button>
+<button aria-label="Obsidian Black" class="w-8 h-8 rounded-full bg-[#1c1b1d] opacity-50 hover:opacity-100 transition-opacity focus:outline-none"></button>
+<button aria-label="Ivory" class="w-8 h-8 rounded-full bg-[#f6f2f5] border border-outline-variant opacity-50 hover:opacity-100 transition-opacity focus:outline-none"></button>
+</div>
+</div>
+<!-- Size Selection -->
+<div class="mb-10">
+<div class="flex justify-between items-end mb-4">
+<h3 class="font-label-lg text-label-lg text-primary uppercase tracking-wider">Size</h3>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary underline underline-offset-4" href="#">Size Guide</a>
+</div>
+<div class="grid grid-cols-4 gap-3">
+<button class="py-3 border border-outline-variant rounded-sm font-label-lg text-label-lg text-on-surface hover:border-primary transition-colors">34</button>
+<button class="py-3 border border-outline-variant rounded-sm font-label-lg text-label-lg text-on-surface hover:border-primary transition-colors">36</button>
+<button class="py-3 border-2 border-primary bg-primary-container text-white rounded-sm font-label-lg text-label-lg">38</button>
+<button class="py-3 border border-outline-variant rounded-sm font-label-lg text-label-lg text-on-surface hover:border-primary transition-colors">40</button>
+<button class="py-3 border border-outline-variant rounded-sm font-label-lg text-label-lg text-on-surface hover:border-primary transition-colors">42</button>
+<button class="py-3 border border-outline-variant rounded-sm font-label-lg text-label-lg text-outline line-through bg-surface-container-low cursor-not-allowed">44</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-4">
+<button class="w-full bg-primary text-white font-label-lg text-label-lg py-4 rounded-sm hover:bg-primary-container transition-colors shadow-sm flex justify-center items-center gap-2">
+<span>Add to Bag</span>
+</button>
+<button class="w-full bg-transparent border border-primary text-primary font-label-lg text-label-lg py-4 rounded-sm hover:bg-surface-container-low transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined">favorite</span>
+<span>Save to Wishlist</span>
+</button>
+</div>
+<!-- Accordions -->
+<div class="mt-12 border-t border-outline-variant">
+<details class="group py-4 border-b border-outline-variant">
+<summary class="flex justify-between items-center font-label-lg text-label-lg cursor-pointer list-none text-primary uppercase tracking-wider">
+<span>Details &amp; Care</span>
+<span class="transition group-open:rotate-180 material-symbols-outlined">expand_more</span>
+</summary>
+<div class="text-on-surface-variant font-body-sm text-body-sm mt-4 leading-relaxed">
+<ul class="list-disc pl-4 space-y-2">
+<li>80% Virgin Wool, 20% Silk</li>
+<li>Cupro lining</li>
+<li>Peak lapel, padded shoulders</li>
+<li>Flap pockets, chest welt pocket</li>
+<li>Dry clean only</li>
+<li>Made in Italy</li>
+</ul>
+</div>
+</details>
+<details class="group py-4 border-b border-outline-variant">
+<summary class="flex justify-between items-center font-label-lg text-label-lg cursor-pointer list-none text-primary uppercase tracking-wider">
+<span>Shipping &amp; Returns</span>
+<span class="transition group-open:rotate-180 material-symbols-outlined">expand_more</span>
+</summary>
+<div class="text-on-surface-variant font-body-sm text-body-sm mt-4 leading-relaxed">
+<p>Complimentary express shipping on all orders. Returns are accepted within 14 days of delivery. The item must be in its original condition with all tags attached.</p>
+</div>
+</details>
+</div>
+</div>
+</section>
+<!-- Complete the Look -->
+<section class="mt-32 fade-up">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-display-lg text-headline-lg text-primary">Complete the Look</h2>
+<a class="font-label-lg text-label-lg text-primary hover:underline underline-offset-4 hidden sm:block" href="#">Shop the Edit</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12">
+<!-- Product 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] mb-4 bg-surface-container-low rounded-lg overflow-hidden shadow-sm">
+<img alt="Sculpted Leather Pumps" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A pair of sleek black leather point-toe pumps sitting on a pristine white surface. Luxury footwear, bright and minimalist editorial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVI3Tsk7fhyCjMg1U7Zev13aiAYhuCuD3JnMyD5nCrpIVa0lE4d_5Gb6iYrLcPznrYRmxgbioqhK0Hhqs5TVlGTB6u4Y7ZRlpEuS9DStG4iC8QRmUkMHgsv0P9OJ2tZovbfrf0MruIlMtL4tGJbb-Kr8XGFSqKe1jwfTd1MiEQmxZqiRz9YeXCIY2oPxVzistggLyL2ZS_rsciIxw7sS1YqtaQvzuLqqM32yQYuD0-DqM_eGF2p-Kh"/>
+<button class="absolute bottom-4 right-4 w-10 h-10 bg-surface/90 rounded-full flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-opacity shadow-sm hover:bg-surface">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-sm mb-1 truncate">Sculpted Leather Pumps</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$650.00</p>
+</div>
+<!-- Product 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] mb-4 bg-surface-container-low rounded-lg overflow-hidden shadow-sm">
+<img alt="Silk Camisole" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist white silk camisole folded neatly on a light grey background. Elegant fabric texture, soft bright lighting, luxury fashion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOBxcs3ne58apsKi6iOn3O9dadZJtujShjHERTU8EfFNwnGb13oOrZheg9nUipj_btjyS4fVYsZxi_SKhN7n8mTbGYyRPkqtuWEDeTww3Lf-_0goeOLeaew5mMtAfCN8dnlRRhxuRBsKJO3k3C47ZiBuEAf9aN5N0ZIJ8GpZUpqvsEl1sIevxiNkwiT2AjgaO_wNSB8kbvVjIFhHaTgoqJoLxCeTEWlxN71sn72pk0CcYYtA_kutcK"/>
+<button class="absolute bottom-4 right-4 w-10 h-10 bg-surface/90 rounded-full flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-opacity shadow-sm hover:bg-surface">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-sm mb-1 truncate">Essential Silk Camisole</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$320.00</p>
+</div>
+<!-- Product 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] mb-4 bg-surface-container-low rounded-lg overflow-hidden shadow-sm">
+<img alt="Mini Structure Bag" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A structured mini top-handle bag in smooth navy leather with silver hardware. High-end accessory photography, clean white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf_ZSn1reSxa-Dh-EY05SSifXbZiphUdo_osZRlykC09XpCpFIiCcbSECoUu2yEPLG3dBmoJIjUwe_vA_95xP0ZC1iyNjzXTWqXzXVnFi_S2FzhVlD7GGHdVdVuggf_bcI0iJ2NGoqSG470xhDhpZ_-3z2Qhifl06iZwMeOas4ahV8xoD-2aPKew22i1Urj_3R5zNsxeeewRToaXjBoLq5tQ8e0XMQe1YFeUQkh995H46d4ua2hyiw"/>
+<button class="absolute bottom-4 right-4 w-10 h-10 bg-surface/90 rounded-full flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-opacity shadow-sm hover:bg-surface">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-sm mb-1 truncate">Mini Structure Bag</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$1,450.00</p>
+</div>
+<!-- Product 4 -->
+<div class="group cursor-pointer hidden md:block">
+<div class="relative aspect-[3/4] mb-4 bg-surface-container-low rounded-lg overflow-hidden shadow-sm">
+<img alt="Geometric Pendant" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A delicate silver chain necklace with a single geometric pendant, styled on a white bust. Fine jewelry, bright light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSjQ58Ydpz-a4gUBp68xtAoXGDYABtbnDXxClheOzasCDmZWkMHEdHjoKdszPuvKoAsjDRqJSBOqtWvNkqtdUohgk24KZN2NMuyJeA_427X6PB7mTQFKRoiS2zXlU8fbXVGlJaVBvS-FpU2sqFml9_tQu2TplLW07tAlyeNftTkLI9J77QgBTCvBSvSLEntGdl97wXzWpfBwEP4GxLnr0IWHSOktCSz0zGJE011GFFqMQJAAcW8dgC"/>
+<button class="absolute bottom-4 right-4 w-10 h-10 bg-surface/90 rounded-full flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-opacity shadow-sm hover:bg-surface">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary text-sm mb-1 truncate">Geometric Pendant</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$480.00</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-stack-lg bg-surface-container-highest border-t border-outline-variant py-stack-md">
+<div class="flex flex-col md:flex-row justify-between items-center px-container-padding max-w-[1280px] mx-auto">
+<div class="mb-6 md:mb-0">
+<span class="font-display-lg text-headline-md text-primary">Modern Elegance</span>
+</div>
+<div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">About Us</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Contact</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Shipping</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a>
+</div>
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Modern Elegance. All Rights Reserved.</span>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Thumbnail Switching Logic
+        function updateHeroImage(btn, newSrc) {
+            // In a real scenario, newSrc would be the actual image path
+            // For this demo with placeholders, we just simulate the click visual
+            
+            // Remove active state from all thumbs
+            document.querySelectorAll('.gallery-thumb').forEach(t => {
+                t.classList.remove('active');
+                t.classList.add('opacity-70');
+            });
+            
+            // Add active state to clicked thumb
+            btn.classList.add('active');
+            btn.classList.remove('opacity-70');
+            
+            // Trigger a quick pulse animation on main image to simulate load
+            const hero = document.getElementById('main-hero-image');
+            hero.style.opacity = '0.7';
+            setTimeout(() => {
+                hero.style.opacity = '1';
+            }, 150);
+        }
+
+        // Intersection Observer for fade-up animations
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up').forEach((elem) => {
+                observer.observe(elem);
+            });
+        });
+    </script>
+</body></html>

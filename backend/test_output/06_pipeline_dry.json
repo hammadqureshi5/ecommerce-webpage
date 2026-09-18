@@ -1,0 +1,107 @@
+{
+  "person_image": "images (1).jfif",
+  "garment_image": "6DSHT649-KHK_4 .png",
+  "person_outfit": "shirt_pant",
+  "garment_type": "shirt_pant",
+  "vton_type": "full_body",
+  "prompt_label": "shirt_pant_to_shirt_pant",
+  "mask_region": "full",
+  "garment_crop": {
+    "cropped": true,
+    "crop_y": 250,
+    "original_size": [
+      840,
+      1260
+    ],
+    "cropped_size": [
+      840,
+      1010
+    ]
+  },
+  "person_classify": [
+    {
+      "label": "shirt_pant",
+      "score": 0.0387,
+      "peak": 0.0487,
+      "best_prompt": "a person wearing a shirt and pants",
+      "margin": 0.0315,
+      "runner_up": "kurta_shalwar",
+      "confident": false
+    },
+    {
+      "label": "kurta_shalwar",
+      "score": 0.0072,
+      "peak": 0.0094,
+      "best_prompt": "a person in a long kurta tunic and loose shalwar"
+    },
+    {
+      "label": "suit",
+      "score": 0.0017,
+      "peak": 0.0025,
+      "best_prompt": "a person wearing a formal suit"
+    }
+  ],
+  "garment_classify": [
+    {
+      "label": "shirt_pant",
+      "score": 0.1446,
+      "peak": 0.3926,
+      "best_prompt": "a matching t-shirt and pants outfit as one product",
+      "margin": 0.0292,
+      "runner_up": "pant",
+      "confident": false
+    },
+    {
+      "label": "pant",
+      "score": 0.1154,
+      "peak": 0.1813,
+      "best_prompt": "a pair of jeans or casual pants alone"
+    },
+    {
+      "label": "shirt",
+      "score": 0.068,
+      "peak": 0.3541,
+      "best_prompt": "a casual crew-neck short-sleeve tee as the main garment"
+    },
+    {
+      "label": "trouser",
+      "score": 0.0074,
+      "peak": 0.0142,
+      "best_prompt": "a pair of formal trousers alone with no shirt visible"
+    },
+    {
+      "label": "shorts",
+      "score": 0.0014,
+      "peak": 0.0019,
+      "best_prompt": "a pair of shorts alone with no shirt visible"
+    },
+    {
+      "label": "jacket",
+      "score": 0.0001,
+      "peak": 0.0001,
+      "best_prompt": "a jacket or blazer product photo"
+    },
+    {
+      "label": "suit",
+      "score": 0.0001,
+      "peak": 0.0002,
+      "best_prompt": "a complete formal suit product photo"
+    },
+    {
+      "label": "kurta_shalwar",
+      "score": 0.0001,
+      "peak": 0.0001,
+      "best_prompt": "a complete kurta shalwar outfit product photo"
+    },
+    {
+      "label": "coat",
+      "score": 0.0,
+      "peak": 0.0001,
+      "best_prompt": "a long coat product photo"
+    }
+  ],
+  "prompt_preview": "Replace the person's clothing with the full-body outfit from the\nreference image. Match the reference exactly: same garment category,\ncolor, pattern, fabric texture, sleeve length, collar and neckline,\nwaistline, closure...",
+  "prompt_chars": 916,
+  "error": null,
+  "ok": true
+}

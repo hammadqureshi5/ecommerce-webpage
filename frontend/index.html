@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Elegance | Premium Fashion</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="js/tailwind-theme.js"></script>
+  <script>tailwind.config = { darkMode: "class", theme: { extend: window.ELITE_TAILWIND } };</script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    body.sidebar-collapsed #desktop-sidebar { transform: translateX(-100%); }
+    body.sidebar-collapsed #main-wrap { margin-left: 0 !important; }
+    body.sidebar-collapsed #top-navbar { left: 0 !important; }
+    #top-navbar { transition: left 0.3s ease-in-out; }
+    @media (min-width: 1024px) {
+      #top-navbar { left: 18rem; }
+    }
+    #sidebar-toggle-icon { transition: transform 0.3s ease; }
+    body.sidebar-collapsed #sidebar-toggle-icon { transform: rotate(180deg); }
+    .hero-slide .bg-cover { transition: transform 8s ease-out; }
+    .hero-slide.opacity-100 .bg-cover { transform: scale(1.04); }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden min-h-screen flex">
+
+  <!-- Desktop sidebar (collapsible) -->
+  <aside id="desktop-sidebar" class="hidden lg:flex fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest border-r border-outline-variant/30 flex-col py-12 px-8 z-40 transition-transform duration-300 ease-in-out">
+    <a class="font-display-lg text-headline-lg tracking-tighter text-primary mb-16 leading-none" href="index.html">MODERN<br/>ELEGANCE</a>
+    <nav class="flex flex-col gap-8 flex-grow">
+      <div class="flex flex-col gap-4">
+        <p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Collections</p>
+        <a class="font-label-lg text-label-lg text-primary hover:text-surface-tint transition-colors flex items-center justify-between group" href="#section-women" data-gender-link="women">
+          <span>Women</span>
+          <span class="material-symbols-outlined text-[18px] opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+        </a>
+        <a class="font-label-lg text-label-lg text-primary hover:text-surface-tint transition-colors flex items-center justify-between group" href="#section-men" data-gender-link="men">
+          <span>Men</span>
+          <span class="material-symbols-outlined text-[18px] opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+        </a>
+      </div>
+      <div class="mt-auto flex flex-col gap-4 pt-8 border-t border-outline-variant/30">
+        <button type="button" data-open-cart class="font-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-3 text-left">
+          <span class="material-symbols-outlined text-[20px]">shopping_cart</span> Cart (<span data-cart-count>0</span>)
+        </button>
+      </div>
+    </nav>
+    <div class="mt-12 text-xs text-on-surface-variant">© 2026 Modern Elegance</div>
+  </aside>
+
+  <div id="main-wrap" class="flex-1 lg:ml-72 flex flex-col min-h-screen transition-[margin] duration-300 ease-in-out">
+
+    <!-- Top navbar (desktop + mobile) -->
+    <header id="top-navbar" class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/20">
+      <!-- Desktop navbar -->
+      <div class="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center h-20 px-8 xl:px-12 max-w-[1600px] mx-auto w-full">
+        <nav class="flex items-center gap-8">
+          <button type="button" id="sidebar-toggle" class="text-primary hover:text-surface-tint transition-colors flex items-center gap-2 font-label-md uppercase tracking-widest" aria-label="Toggle sidebar" aria-pressed="true">
+            <span class="material-symbols-outlined text-[22px]" id="sidebar-toggle-icon">chevron_left</span>
+            <span class="hidden xl:inline">Menu</span>
+          </button>
+          <a href="#trending" class="font-label-md text-label-md text-primary uppercase tracking-[0.15em] hover:text-surface-tint transition-colors">Shop</a>
+          <a href="#section-women" class="font-label-md text-label-md text-primary uppercase tracking-[0.15em] hover:text-surface-tint transition-colors">Collections</a>
+          <a href="#" class="font-label-md text-label-md text-primary uppercase tracking-[0.15em] hover:text-surface-tint transition-colors">Editorial</a>
+        </nav>
+        <a href="index.html" class="font-display-lg text-[clamp(1.25rem,2.5vw,1.75rem)] tracking-[0.12em] text-primary uppercase text-center whitespace-nowrap px-4">Modern Elegance</a>
+        <div class="flex items-center justify-end gap-8">
+          <button type="button" id="search-btn-desktop" class="font-label-md text-label-md text-primary uppercase tracking-[0.15em] hover:text-surface-tint transition-colors">Search</button>
+          <button type="button" class="font-label-md text-label-md text-primary uppercase tracking-[0.15em] hover:text-surface-tint transition-colors">Profile</button>
+          <button type="button" data-open-cart class="text-primary hover:text-surface-tint transition-colors relative" aria-label="Shopping bag">
+            <span class="material-symbols-outlined text-[26px]">shopping_bag</span>
+            <span data-cart-count class="absolute -top-1 -right-2 text-[10px] font-label-md bg-primary text-on-primary rounded-full min-w-[16px] h-4 flex items-center justify-center px-1">0</span>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile navbar -->
+      <div class="lg:hidden flex justify-between items-center px-4 h-16 w-full">
+        <button type="button" class="text-primary" id="drawer-btn" aria-label="Menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <a class="font-display-lg text-[18px] tracking-[0.1em] text-primary uppercase" href="index.html">Modern Elegance</a>
+        <button type="button" class="text-primary relative" data-open-cart aria-label="Cart">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span data-cart-dot class="hidden absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile nav drawer -->
+    <div class="fixed inset-0 bg-scrim z-[55] hidden opacity-0 transition-opacity duration-300 lg:hidden" id="nav-drawer-scrim"></div>
+    <nav class="h-full w-80 fixed left-0 top-0 z-[60] bg-surface shadow-2xl flex flex-col p-6 gap-stack-sm -translate-x-full transition-transform duration-300 ease-in-out lg:hidden" id="nav-drawer">
+      <div class="flex justify-between items-center mb-stack-md">
+        <h2 class="font-display-lg text-headline-lg-mobile text-primary">MENU</h2>
+        <button type="button" id="close-drawer-btn"><span class="material-symbols-outlined">close</span></button>
+      </div>
+      <a href="#section-women" data-gender-link="women" class="flex items-center gap-4 p-3 bg-secondary-container text-on-secondary-container rounded-lg font-label-lg">Women</a>
+      <a href="#section-men" data-gender-link="men" class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg font-label-lg">Men</a>
+    </nav>
+
+    <main class="flex-grow w-full pt-16 lg:pt-20">
+      <!-- Hero carousel -->
+      <section id="hero-carousel" class="relative w-full mb-12 lg:mb-24 px-4 lg:px-8">
+        <div class="relative w-full h-[75vh] lg:h-[calc(100vh-5rem)] lg:min-h-[640px] rounded-2xl overflow-hidden">
+          <div id="hero-track" class="relative w-full h-full"></div>
+          <div id="hero-dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2"></div>
+        </div>
+      </section>
+
+      <!-- VTON category sections -->
+      <section id="vton-full-body" class="mb-24 px-4 lg:px-12 scroll-mt-28">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 border-b border-outline-variant/30 pb-4">
+          <div>
+            <p class="font-label-md text-on-surface-variant uppercase tracking-widest mb-2">Full Body</p>
+            <h2 class="font-headline-lg text-primary">Shalwar Kameez &amp; Suits</h2>
+            <p class="font-body-sm text-on-surface-variant mt-2">Shalwar kameez, shirt &amp; pant sets, formal suits</p>
+          </div>
+        </div>
+        <div id="grid-full-body" class="grid grid-cols-2 md:grid-cols-4 gap-8"></div>
+      </section>
+
+      <section id="vton-upper-body" class="mb-24 px-4 lg:px-12 scroll-mt-28">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 border-b border-outline-variant/30 pb-4">
+          <div>
+            <p class="font-label-md text-on-surface-variant uppercase tracking-widest mb-2">Upper Body</p>
+            <h2 class="font-headline-lg text-primary">Shirts Coats &amp; Jackets</h2>
+            <p class="font-body-sm text-on-surface-variant mt-2">Shirts, jackets, and coats</p>
+          </div>
+        </div>
+        <div id="grid-upper-body" class="grid grid-cols-2 md:grid-cols-4 gap-8"></div>
+      </section>
+
+      <section id="vton-lower-body" class="mb-24 px-4 lg:px-12 scroll-mt-28">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 border-b border-outline-variant/30 pb-4">
+          <div>
+            <p class="font-label-md text-on-surface-variant uppercase tracking-widest mb-2">Lower Body</p>
+            <h2 class="font-headline-lg text-primary">Pants Trousers &amp; Shorts</h2>
+            <p class="font-body-sm text-on-surface-variant mt-2">Pants, trousers, and shorts</p>
+          </div>
+        </div>
+        <div id="grid-lower-body" class="grid grid-cols-2 md:grid-cols-4 gap-8"></div>
+      </section>
+
+      <!-- Category cards -->
+      <section class="px-4 lg:px-12 mb-12 lg:mb-32">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-12 items-start">
+          <div class="hidden md:block md:col-span-4 mt-24">
+            <h2 class="font-headline-lg text-primary mb-4 leading-snug">Curated for<br/>the Modern<br/>Aesthetic</h2>
+            <p class="font-body-md text-on-surface-variant mb-8">Discover pieces designed to blend seamlessly into a contemporary lifestyle.</p>
+          </div>
+          <a id="section-women" href="#section-women" class="md:col-span-8 relative group cursor-pointer overflow-hidden rounded-xl h-[500px] lg:h-[800px] block scroll-mt-24">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzQ-zVlaN6DPHJdAPcCatKqFMGbLKfA0gbus49FAe8NgRblIMXsGRgiQiCqMpzdP1R22_YqGZk4iE6Dbl-wiyoXjGFWeFTz9df_DxsoHjbe5EB96VpVdGuvlZ_WdkKB59HGgHWiV8mMJKUr9AQeSiepFEH2qlEkwhaS0cV7Z5UfcZmJWRVT5ql684cLiZTEJvOWpE9vDZJeFDbfWf5Hr8h3FlvHN288N1ORovKGfIBE139cQmJju3r')"></div>
+            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+            <div class="absolute bottom-8 left-8"><span class="font-label-md text-on-primary/80 uppercase tracking-widest block mb-2">01</span><h3 class="font-display-lg text-headline-lg text-on-primary">Women</h3></div>
+          </a>
+          <a id="section-men" href="#section-men" class="md:col-span-6 md:col-start-2 relative group cursor-pointer overflow-hidden rounded-xl h-[400px] lg:h-[600px] lg:-mt-32 z-10 block scroll-mt-24">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpRkiV4zuoSh9ruq74dnRYKGWl6fd_gFtX_o2ApGv89Jn0JCtod__FIZ2LOkJq-dp_f-YvNS4yMn61stIE2kvvByIxEen4-sVynubOIFKYVOpDOECQd61lhWw6VT4EKx-LiHpZX1BBEuGmcirsnwfAAg6w0fD5IqXhQXvER1E0n5sBv2c0vrjK4S0gfEtm6nSsA9CZiQUB-1PUJH3AiWsP-ZYHjiBsI9El9-7j_6K2UnTSIFr4I8Lo')"></div>
+            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+            <div class="absolute bottom-8 left-8"><span class="font-label-md text-on-primary/80 uppercase tracking-widest block mb-2">02</span><h3 class="font-display-lg text-headline-lg text-on-primary">Men</h3></div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Trending -->
+      <section id="trending" class="mb-24 lg:mb-32 px-4 lg:px-12 scroll-mt-24">
+        <div class="flex justify-between items-end mb-12 border-b border-outline-variant/30 pb-4">
+          <h2 class="font-headline-md text-headline-lg text-primary">Trending Now</h2>
+        </div>
+        <div id="trending-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+      </section>
+
+      <!-- Women grid -->
+      <section class="mb-24 px-4 lg:px-12">
+        <h2 class="font-headline-lg text-primary mb-8">Women</h2>
+        <div id="grid-female" class="grid grid-cols-2 md:grid-cols-4 gap-8"></div>
+      </section>
+
+      <!-- Men grid -->
+      <section class="mb-24 px-4 lg:px-12 pb-24 lg:pb-16">
+        <h2 class="font-headline-lg text-primary mb-8">Men</h2>
+        <div id="grid-male" class="grid grid-cols-2 md:grid-cols-4 gap-8"></div>
+      </section>
+    </main>
+
+    <footer class="w-full py-16 border-t border-outline-variant/30 bg-surface px-8 lg:px-16 text-center lg:text-left">
+      <div class="font-display-lg text-[24px] text-primary mb-4">MODERN ELEGANCE</div>
+      <p class="font-body-sm text-on-surface-variant">Elevating everyday essentials through meticulous design.</p>
+    </footer>
+  </div>
+
+  <!-- Search overlay -->
+  <div id="search-overlay" class="fixed inset-0 z-[80] hidden items-start justify-center pt-28 px-4 bg-scrim/50 backdrop-blur-sm">
+    <div class="w-full max-w-xl bg-surface-container-lowest rounded-xl shadow-2xl p-6 border border-outline-variant/30">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="font-headline-md text-primary">Search</h2>
+        <button type="button" id="search-close" aria-label="Close search"><span class="material-symbols-outlined">close</span></button>
+      </div>
+      <input type="search" id="search-input" placeholder="Search products…" class="w-full border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:outline-none focus:border-primary" />
+      <div id="search-results" class="mt-4 max-h-64 overflow-y-auto"></div>
+    </div>
+  </div>
+
+  <!-- Mobile bottom nav -->
+  <nav class="lg:hidden fixed bottom-0 w-full z-50 bg-surface shadow-[0_-4px_12px_rgba(4,22,39,0.05)] border-t border-outline-variant/20">
+    <div class="flex justify-around items-center h-16 px-4">
+      <a href="index.html" class="flex flex-col items-center text-primary w-16"><span class="material-symbols-outlined">storefront</span><span class="font-label-md text-[10px] mt-1">Shop</span></a>
+      <button type="button" data-open-cart class="flex flex-col items-center text-on-surface-variant relative w-16">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <span data-cart-dot class="hidden absolute top-0 right-3 w-2 h-2 bg-primary rounded-full"></span>
+        <span class="font-label-md text-[10px] mt-1">Cart</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Cart drawer -->
+  <div id="cart-scrim" class="fixed inset-0 bg-scrim z-[70] hidden opacity-0 transition-opacity duration-300"></div>
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-surface-container-lowest z-[75] shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="flex justify-between items-center p-6 border-b border-outline-variant">
+      <h2 class="font-headline-md text-primary">Your Bag (<span data-cart-count>0</span>)</h2>
+      <button type="button" data-close-cart aria-label="Close"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <div id="cart-body" class="flex-1 overflow-y-auto p-6"></div>
+  </aside>
+
+  <script src="js/config.js?v=20260902"></script>
+  <script src="js/products.js?v=20260902"></script>
+  <script src="js/elite-cart.js?v=20260902"></script>
+  <script src="js/elite-vton.js?v=20260902"></script>
+  <script src="js/elite-hero.js?v=20260902"></script>
+  <script src="js/elite-shop.js?v=20260902"></script>
+</body>
+</html>

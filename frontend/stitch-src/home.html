@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MODERN ELEGANCE | Premium Fashion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#041627",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#0b1d2d",
+                        "on-secondary-fixed-variant": "#46464e",
+                        "secondary-fixed": "#e3e1ec",
+                        "tertiary-fixed": "#e2e2e3",
+                        "surface-dim": "#dcd9dc",
+                        "on-secondary-fixed": "#1a1b22",
+                        "tertiary": "#141617",
+                        "inverse-on-surface": "#f3f0f2",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b7c8de",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "background": "#fcf8fb",
+                        "surface-bright": "#fcf8fb",
+                        "surface-tint": "#4f6073",
+                        "primary-container": "#1a2b3c",
+                        "inverse-surface": "#313032",
+                        "surface-container-high": "#eae7ea",
+                        "surface": "#fcf8fb",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f0edf0",
+                        "tertiary-container": "#282a2b",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#909192",
+                        "surface-container-highest": "#e5e1e4",
+                        "outline": "#74777d",
+                        "on-primary-fixed-variant": "#38485a",
+                        "on-tertiary-fixed": "#1a1c1d",
+                        "on-background": "#1c1b1d",
+                        "outline-variant": "#c4c6cd",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f2f5",
+                        "on-surface-variant": "#44474c",
+                        "secondary": "#5d5e66",
+                        "secondary-fixed-dim": "#c6c5cf",
+                        "inverse-primary": "#b7c8de",
+                        "secondary-container": "#e3e1ec",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "surface-variant": "#e5e1e4",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1c1b1d",
+                        "on-secondary-container": "#63646c",
+                        "primary-fixed": "#d2e4fb",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#8192a7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "container-padding": "20px",
+                        "unit": "4px",
+                        "stack-lg": "48px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter", "sans-serif"],
+                        "headline-md": ["Playfair Display", "serif"],
+                        "body-sm": ["Inter", "sans-serif"],
+                        "label-md": ["Inter", "sans-serif"],
+                        "headline-lg": ["Playfair Display", "serif"],
+                        "headline-lg-mobile": ["Playfair Display", "serif"],
+                        "display-lg": ["Playfair Display", "serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 300;
+        }
+        /* Custom Utilities */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .bg-scrim {
+            background-color: rgba(4, 22, 39, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden min-h-screen flex">
+<!-- Desktop Sidebar (Modern Boutique Style) -->
+<aside class="hidden lg:flex fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest border-r border-outline-variant/30 flex-col py-12 px-8 z-40">
+<a class="font-display-lg text-headline-lg tracking-tighter text-primary dark:text-primary-fixed mb-16 leading-none" href="#">
+            MODERN<br/>ELEGANCE
+        </a>
+<nav class="flex flex-col gap-8 flex-grow">
+<div class="flex flex-col gap-4">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Collections</p>
+<a class="font-label-lg text-label-lg text-primary hover:text-surface-tint transition-colors flex items-center justify-between group" href="#">
+<span>Women</span>
+<span class="material-symbols-outlined text-[18px] opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+</a>
+<a class="font-label-lg text-label-lg text-primary hover:text-surface-tint transition-colors flex items-center justify-between group" href="#">
+<span>Men</span>
+<span class="material-symbols-outlined text-[18px] opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+</a>
+<a class="font-label-lg text-label-lg text-primary hover:text-surface-tint transition-colors flex items-center justify-between group" href="#">
+<span>Accessories</span>
+<span class="material-symbols-outlined text-[18px] opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+</a>
+<a class="font-label-lg text-label-lg text-primary hover:text-surface-tint transition-colors flex items-center justify-between group" href="#">
+<span>New Arrivals</span>
+<span class="material-symbols-outlined text-[18px] opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-4 pt-8 border-t border-outline-variant/30">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]">search</span> Search
+                </a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span> Account
+                </a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span> Cart (0)
+                </a>
+</div>
+</nav>
+<div class="mt-12 text-xs text-on-surface-variant">
+            © 2024 Modern Elegance
+        </div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 lg:ml-72 flex flex-col min-h-screen">
+<!-- Mobile TopAppBar -->
+<header class="lg:hidden fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/20">
+<div class="flex justify-between items-center px-4 h-16 w-full">
+<button aria-label="Open Menu" class="text-primary hover:opacity-80 transition-opacity" id="drawer-btn">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-display-lg text-[22px] tracking-tighter text-primary">
+                    MODERN ELEGANCE
+                </div>
+<button aria-label="Shopping Cart" class="text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</header>
+<!-- Mobile NavigationDrawer -->
+<div class="fixed inset-0 bg-scrim z-[55] hidden opacity-0 transition-opacity duration-300 lg:hidden" id="nav-drawer-scrim"></div>
+<nav class="h-full w-80 fixed left-0 top-0 z-[60] bg-surface shadow-2xl flex flex-col p-6 gap-stack-sm -translate-x-full transition-transform duration-300 ease-in-out lg:hidden" id="nav-drawer">
+<div class="flex justify-between items-center mb-stack-md">
+<h2 class="font-display-lg text-headline-lg-mobile text-primary">MENU</h2>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity" id="close-drawer-btn">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<a class="flex items-center gap-4 p-3 bg-secondary-container text-on-secondary-container rounded-lg" href="#">
+<span class="font-label-lg text-label-lg">Women</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors" href="#">
+<span class="font-label-lg text-label-lg">Men</span>
+</a>
+<a class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors" href="#">
+<span class="font-label-lg text-label-lg">New Arrivals</span>
+</a>
+</nav>
+<main class="flex-grow w-full pt-16 lg:pt-0">
+<!-- Hero Banner -->
+<section class="relative w-full h-[70vh] lg:h-screen lg:min-h-[800px] mb-12 lg:mb-24 p-4 lg:p-8">
+<div class="relative w-full h-full rounded-2xl overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-[1.02]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9oFDYApKGi-0kRBArLPLTpgOtLtlU7oN2UGQLzs6CpNLXhQqeZIkJmbHcsIouexNSoCgBGt7ODjbbLso9kcmbfsxAyOcScybq3mMvVMpc--dmYAKOOhR3ND_4fQyTl5fJVIZ1YhSQ9YjVam3LkFS31ftZW-MetV03FFcj0PCPqXsWfkgDZZN-zWfzNf9d8fTjtmpAxRzFhVNlT4sbKD_QoEhqKK76jZmBWJOd_21ZDGygFHGzbmtT')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/20 to-transparent flex flex-col justify-end p-8 lg:p-16">
+<span class="font-label-lg text-label-lg text-on-primary/90 uppercase tracking-[0.2em] mb-4">The Fall Edit</span>
+<h1 class="font-display-lg text-headline-lg lg:text-display-lg text-on-primary mb-8 leading-tight max-w-3xl">
+                            ELEVATE YOUR <br class="hidden lg:block"/>
+                            EVERYDAY WARDROBE
+                        </h1>
+<a class="inline-flex items-center justify-center bg-on-primary text-primary font-label-lg text-label-lg py-4 px-10 rounded-full w-fit hover:bg-surface-container transition-colors active:scale-95" href="#">
+                            Shop The Collection
+                        </a>
+</div>
+</div>
+</section>
+<!-- Asymmetrical Masonry Category Grid -->
+<section class="px-4 lg:px-12 mb-12 lg:mb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-12 items-start">
+<!-- Text Intro Block (Desktop Only) -->
+<div class="hidden md:block md:col-span-4 mt-24">
+<h2 class="font-headline-lg text-primary mb-4 leading-snug">Curated for<br/>the Modern<br/>Aesthetic</h2>
+<p class="font-body-md text-on-surface-variant mb-8">Discover pieces designed to blend seamlessly into a contemporary lifestyle, focusing on form, function, and uncompromising quality.</p>
+<a class="font-label-lg text-primary border-b border-primary pb-1 hover:text-surface-tint hover:border-surface-tint transition-colors inline-flex items-center gap-2" href="#">
+                            Explore Collections <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Women's Card (Large, offset) -->
+<div class="md:col-span-8 relative group cursor-pointer overflow-hidden rounded-xl h-[500px] lg:h-[800px]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzQ-zVlaN6DPHJdAPcCatKqFMGbLKfA0gbus49FAe8NgRblIMXsGRgiQiCqMpzdP1R22_YqGZk4iE6Dbl-wiyoXjGFWeFTz9df_DxsoHjbe5EB96VpVdGuvlZ_WdkKB59HGgHWiV8mMJKUr9AQeSiepFEH2qlEkwhaS0cV7Z5UfcZmJWRVT5ql684cLiZTEJvOWpE9vDZJeFDbfWf5Hr8h3FlvHN288N1ORovKGfIBE139cQmJju3r')"></div>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500"></div>
+<div class="absolute bottom-8 left-8 right-8 flex justify-between items-end">
+<div>
+<span class="font-label-md text-on-primary/80 uppercase tracking-widest block mb-2">01</span>
+<h3 class="font-display-lg text-headline-lg text-on-primary">Women</h3>
+</div>
+<div class="w-12 h-12 rounded-full border border-on-primary flex items-center justify-center transform group-hover:bg-on-primary group-hover:text-primary transition-all duration-300 text-on-primary backdrop-blur-sm">
+<span class="material-symbols-outlined">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Men's Card (Smaller, offset) -->
+<div class="md:col-span-6 md:col-start-2 relative group cursor-pointer overflow-hidden rounded-xl h-[400px] lg:h-[600px] lg:-mt-32 z-10">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpRkiV4zuoSh9ruq74dnRYKGWl6fd_gFtX_o2ApGv89Jn0JCtod__FIZ2LOkJq-dp_f-YvNS4yMn61stIE2kvvByIxEen4-sVynubOIFKYVOpDOECQd61lhWw6VT4EKx-LiHpZX1BBEuGmcirsnwfAAg6w0fD5IqXhQXvER1E0n5sBv2c0vrjK4S0gfEtm6nSsA9CZiQUB-1PUJH3AiWsP-ZYHjiBsI9El9-7j_6K2UnTSIFr4I8Lo')"></div>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500"></div>
+<div class="absolute bottom-8 left-8 right-8 flex justify-between items-end">
+<div>
+<span class="font-label-md text-on-primary/80 uppercase tracking-widest block mb-2">02</span>
+<h3 class="font-display-lg text-headline-lg text-on-primary">Men</h3>
+</div>
+<div class="w-12 h-12 rounded-full border border-on-primary flex items-center justify-center transform group-hover:bg-on-primary group-hover:text-primary transition-all duration-300 text-on-primary backdrop-blur-sm">
+<span class="material-symbols-outlined">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Now (Interactive Hover States) -->
+<section class="mb-24 lg:mb-32 px-4 lg:px-12">
+<div class="flex justify-between items-end mb-12 border-b border-outline-variant/30 pb-4">
+<h2 class="font-headline-md text-headline-lg text-primary">Trending Now</h2>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors inline-flex items-center gap-1" href="#">
+                        View All <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Product 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1hMwaFIZcn2zJ9FW0CFl89KspVfV1-UDyrTN7HHpUETJOYkdyaOp_9Q0oPCyXx6nJwtEtOLOp_XoKyqFjX_x5l2S-DTFw6rWzPcZXaYuJfToerlbOw_GvWZdcmGmPAFQPgbL3nN4M7raBYrDVrmsxq-5D4XDJIsNaswFnuEl3JlLIsomJVNXXTkQiTnuKMoi0qJndGNGxZszOLyWj1OzlYK2spaC7_LB5exbzNS_4CmOWud90srpH"/>
+<!-- Interactive Hover Overlay -->
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full bg-surface text-primary font-label-lg py-3 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 hover:bg-surface-container-high">
+                                    Quick Add - $450
+                                </button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary">Structured Leather Tote</h4>
+<p class="font-body-sm text-on-surface-variant mt-1">Charcoal Grey</p>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group cursor-pointer lg:mt-8">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5W6AubeTZWDup33Guw0Tuk3wKxXGST8BgWHseCW-VJZHNw5t1oaAIT6Amhas6f6tw46_MXnMTL5WzVTJZyYm4PLNRXEWX_eetFshBhwUnFZ4K3QtwVCJIAjFs_ISwwEhzJWO8q9EaM64fBVtpYG-eIKG2PLUNK5pBAGF_NplcRlIAaXJfh0ZrZJLVduN6F0EhbKR7QQWVeO1x0J7snq3fsEpnPtBuMoRGSWqIVQq00CHmH0laL2zg"/>
+<!-- Interactive Hover Overlay -->
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full bg-surface text-primary font-label-lg py-3 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 hover:bg-surface-container-high">
+                                    Quick Add - $195
+                                </button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary">Classic Court Sneaker</h4>
+<p class="font-body-sm text-on-surface-variant mt-1">Optic White</p>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSGkA5Kol06hv4fjX0nVXPI3ikHS6kaZyum-sqMQJcEBZg16YA2EpJ19YEQ3KTRy_QGYdILTX3Nx1YQdw9iNBkr3hrUA3rPr8q8r7OXsGd2rXQhyEBWI138Tx3uINkPeLfkR3fywL5OeX3a0cC2DlP8goCW2b548SVSguMaOmXyO6FzQl607a4EpN6Oc3mi7Wk6z1u2-r7sMQUcagEY9f9R5dr2ckYRYmRe-_kmUTLmCeAban5OqjP"/>
+<!-- Interactive Hover Overlay -->
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full bg-surface text-primary font-label-lg py-3 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 hover:bg-surface-container-high">
+                                    Quick Add - $120
+                                </button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary">Silk Geometric Scarf</h4>
+<p class="font-body-sm text-on-surface-variant mt-1">Navy / Cream</p>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group cursor-pointer lg:mt-8">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-surface-container-low mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvMlVRnoW5ggObPMMTZoyGqpjPjgNHTRb6nTNsoshK-qcYI1gTETOjZ1iBvLI8PmHKnGmGa95NUGmgXlOcrjLjqXhapZA56eeyWpMRXp5xRU3X_MC4QPWI002glOV-8PSop4kalogObNqwOmtRVbLmz9tW_ZWBTdowGrDcoG7Q9gl7Yi3L4ugzbgPiKqw0qpvYS9jPGBbS965Lz746lbeUbVchcK3X6hgn8jyvqE5Bd9agngt9RwEU"/>
+<!-- Interactive Hover Overlay -->
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<button class="w-full bg-surface text-primary font-label-lg py-3 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 hover:bg-surface-container-high">
+                                    Quick Add - $210
+                                </button>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-label-lg text-label-lg text-primary">Minimalist Silver Cuff</h4>
+<p class="font-body-sm text-on-surface-variant mt-1">Sterling Silver</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 lg:py-24 border-t border-outline-variant/30 bg-surface flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 px-8 lg:px-16 pb-24 lg:pb-16 text-center lg:text-left">
+<div class="max-w-xs">
+<div class="font-display-lg text-[24px] text-primary mb-6">
+                    MODERN ELEGANCE
+                </div>
+<p class="font-body-sm text-on-surface-variant">Elevating everyday essentials through meticulous design and premium materials.</p>
+</div>
+<nav class="flex flex-col lg:flex-row gap-8 lg:gap-16">
+<div class="flex flex-col gap-4">
+<h5 class="font-label-lg text-primary">Explore</h5>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Collections</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Journal</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-lg text-primary">Support</h5>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="font-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">FAQ</a>
+</div>
+</nav>
+</footer>
+</div> <!-- End Main Content Wrapper -->
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="lg:hidden fixed bottom-0 w-full z-50 bg-surface shadow-[0_-4px_12px_rgba(4,22,39,0.05)] border-t border-outline-variant/20">
+<div class="flex justify-around items-center h-16 px-4 pb-safe bg-surface">
+<a class="flex flex-col items-center justify-center text-primary font-bold hover:opacity-80 transition-opacity w-16" href="#">
+<span class="material-symbols-outlined" data-icon="storefront" data-weight="fill">storefront</span>
+<span class="font-label-md text-[10px] mt-1">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors w-16" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-md text-[10px] mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors w-16 relative" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute top-0 right-2 w-2 h-2 bg-primary rounded-full"></span>
+<span class="font-label-md text-[10px] mt-1">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors w-16" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-[10px] mt-1">Profile</span>
+</a>
+</div>
+</nav>
+<!-- Interactions Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const drawerBtn = document.getElementById('drawer-btn');
+            const closeBtn = document.getElementById('close-drawer-btn');
+            const drawer = document.getElementById('nav-drawer');
+            const scrim = document.getElementById('nav-drawer-scrim');
+
+            if(drawerBtn && scrim && drawer && closeBtn) {
+                function openDrawer() {
+                    scrim.classList.remove('hidden');
+                    setTimeout(() => {
+                        scrim.classList.remove('opacity-0');
+                        drawer.classList.remove('-translate-x-full');
+                    }, 10);
+                }
+
+                function closeDrawer() {
+                    scrim.classList.add('opacity-0');
+                    drawer.classList.add('-translate-x-full');
+                    setTimeout(() => {
+                        scrim.classList.add('hidden');
+                    }, 300);
+                }
+
+                drawerBtn.addEventListener('click', openDrawer);
+                closeBtn.addEventListener('click', closeDrawer);
+                scrim.addEventListener('click', closeDrawer);
+            }
+        });
+    </script>
+</body></html>

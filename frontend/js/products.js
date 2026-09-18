@@ -1,16 +1,134 @@
 // Auto-generated from breakout.com.pk scrape — real CDN images (Men + Women only)
 const HERO_SLIDES = [
   {
-    "desktop": "https://www.breakout.com.pk/cdn/shop/files/Men_Main_jpg_68c3ab17-7192-4bf0-a758-e73897e8869a.jpg?v=1786734994&width=2560",
-    "mobile": "https://www.breakout.com.pk/cdn/shop/files/Men_Mobile_jpg_7b3d3cb0-6622-4180-9ec7-3ab0803d54a1.jpg?v=1786734989&width=1000",
-    "link": "#section-men"
+    desktop: "https://www.breakout.com.pk/cdn/shop/files/Men_Main_jpg_68c3ab17-7192-4bf0-a758-e73897e8869a.jpg?v=1786734994&width=2560",
+    mobile: "https://www.breakout.com.pk/cdn/shop/files/Men_Mobile_jpg_7b3d3cb0-6622-4180-9ec7-3ab0803d54a1.jpg?v=1786734989&width=1000",
+    label: "The Fall Edit",
+    headline: "Elevate Your Everyday Wardrobe",
+    badge: "Mind The Gap",
+    cta: "Shop The Collection",
+    link: "#section-men",
+    category: "full_body",
+    garment_type: "shirt_pant"
   },
   {
-    "desktop": "https://www.breakout.com.pk/cdn/shop/files/Women_Main_jpg_c97ae766-5dc7-4ade-84fc-df59a3bf5c97.jpg?v=1786734994&width=2560",
-    "mobile": "https://www.breakout.com.pk/cdn/shop/files/Women_Mobile_jpg_97c99a29-9979-491a-9168-8cb618335c8e.jpg?v=1786734988&width=1000",
-    "link": "#section-women"
+    desktop: "https://www.breakout.com.pk/cdn/shop/files/Women_Main_jpg_c97ae766-5dc7-4ade-84fc-df59a3bf5c97.jpg?v=1786734994&width=2560",
+    mobile: "https://www.breakout.com.pk/cdn/shop/files/Women_Mobile_jpg_97c99a29-9979-491a-9168-8cb618335c8e.jpg?v=1786734988&width=1000",
+    label: "Heritage Craft",
+    headline: "Shalwar Kameez Essentials",
+    badge: "Full Body",
+    cta: "Shop Kurta Shalwar",
+    link: "#vton-full-body",
+    category: "full_body",
+    garment_type: "kurta_shalwar"
+  },
+  {
+    desktop: "https://www.breakout.com.pk/cdn/shop/files/6DSFW667-BLU_4.jpg?v=1779176897&width=1920",
+    mobile: "https://www.breakout.com.pk/cdn/shop/files/6DSFW667-BLU_4.jpg?v=1779176897&width=1000",
+    label: "Upper Body",
+    headline: "Shirts Coats & Jackets",
+    badge: "Layer Up",
+    cta: "Shop Upper Body",
+    link: "#vton-upper-body",
+    category: "upper_body",
+    garment_type: "jacket"
+  },
+  {
+    desktop: "https://www.breakout.com.pk/cdn/shop/files/26FWP310-BRN_1.jpg?v=1787554576&width=1920",
+    mobile: "https://www.breakout.com.pk/cdn/shop/files/26FWP310-BRN_1.jpg?v=1787554576&width=1000",
+    label: "Lower Body",
+    headline: "Pants Trousers & Shorts",
+    badge: "Bottoms",
+    cta: "Shop Lower Body",
+    link: "#vton-lower-body",
+    category: "lower_body",
+    garment_type: "trouser"
+  },
+  {
+    desktop: "https://www.breakout.com.pk/cdn/shop/files/6DSHP806-BGE_2.jpg?v=1781677513&width=1920",
+    mobile: "https://www.breakout.com.pk/cdn/shop/files/6DSHP806-BGE_2.jpg?v=1781677513&width=1000",
+    label: "Formal Edit",
+    headline: "Pant Shirt & Suit Sets",
+    badge: "Full Body",
+    cta: "Shop Suits",
+    link: "#vton-full-body",
+    category: "full_body",
+    garment_type: "suit"
+  },
+  {
+    desktop: "https://www.breakout.com.pk/cdn/shop/files/6DSMD802-BLK_1.jpg?v=1782107744&width=1920",
+    mobile: "https://www.breakout.com.pk/cdn/shop/files/6DSMD802-BLK_1.jpg?v=1782107744&width=1000",
+    label: "Denim Days",
+    headline: "Classic Fits Refined Denim",
+    badge: "Remix",
+    cta: "Shop Denim",
+    link: "#vton-lower-body",
+    category: "lower_body",
+    garment_type: "pant"
+  },
+  {
+    desktop: "https://www.breakout.com.pk/cdn/shop/files/6DSWT770-OFW_1.jpg?v=1779529132&width=1920",
+    mobile: "https://www.breakout.com.pk/cdn/shop/files/6DSWT770-OFW_1.jpg?v=1779529132&width=1000",
+    label: "Women's Edit",
+    headline: "Modern Silhouettes For Her",
+    badge: "New In",
+    cta: "Shop Women",
+    link: "#section-women",
+    category: "upper_body",
+    garment_type: "shirt"
+  },
+  {
+    desktop: "https://www.breakout.com.pk/cdn/shop/files/6ESHT836-KHK_5.jpg?v=1786452091&width=1920",
+    mobile: "https://www.breakout.com.pk/cdn/shop/files/6ESHT836-KHK_5.jpg?v=1786452091&width=1000",
+    label: "Summer Drop",
+    headline: "Lightweight Tees & Shorts",
+    badge: "Hot Now",
+    cta: "Shop Summer",
+    link: "#vton-lower-body",
+    category: "lower_body",
+    garment_type: "shorts"
+  },
+  {
+    desktop: "https://www.breakout.com.pk/cdn/shop/files/6DSWT748-BRG_1.jpg?v=1779350835&width=1920",
+    mobile: "https://www.breakout.com.pk/cdn/shop/files/6DSWT748-BRG_1.jpg?v=1779350835&width=1000",
+    label: "Virtual Try-On",
+    headline: "See It On You Before You Buy",
+    badge: "Try Now",
+    cta: "Explore Try-On",
+    link: "#trending",
+    category: "full_body",
+    garment_type: "shirt_pant"
   }
 ];
+
+/** Display labels for VTON fields sent to backend (category → vton_type). */
+const VTON_CATEGORY_LABELS = {
+  full_body: "Full Body",
+  upper_body: "Upper Body",
+  lower_body: "Lower Body"
+};
+
+const GARMENT_TYPE_LABELS = {
+  kurta_shalwar: "Shalwar Kameez",
+  shirt_pant: "Shirt & Pant",
+  suit: "Suit",
+  shirt: "Shirt",
+  jacket: "Jacket",
+  coat: "Coat",
+  pant: "Pant",
+  trouser: "Trouser",
+  shorts: "Shorts"
+};
+
+function vtonCategoryLabel(category) {
+  if (!category) return "All Styles";
+  return VTON_CATEGORY_LABELS[category] || String(category).replace(/_/g, " ");
+}
+
+function garmentTypeLabel(garmentType) {
+  if (!garmentType) return "Clothing";
+  return GARMENT_TYPE_LABELS[garmentType] || String(garmentType).replace(/_/g, " ");
+}
 
 const MEGA_MENU = {
   "male": {
@@ -744,6 +862,149 @@ const PRODUCTS = [
     "image": "https://www.breakout.com.pk/cdn/shop/files/26FWP310-BRN_1.jpg?v=1787554576&width=840",
     "category": "lower_body",
     "garment_type": "trouser"
+  },
+  {
+    "id": "classic-kurta-shalwar",
+    "name": "CLASSIC KURTA SHALWAR",
+    "gender": "male",
+    "featuredCategory": "shirts",
+    "bestSeller": true,
+    "onSale": false,
+    "price": 5499,
+    "compareAt": null,
+    "image": "https://www.breakout.com.pk/cdn/shop/files/6DSFW667-BLU_4.jpg?v=1779176897&width=840",
+    "category": "full_body",
+    "garment_type": "kurta_shalwar"
+  },
+  {
+    "id": "embroidered-shalwar-kameez",
+    "name": "EMBROIDERED SHALWAR KAMEEZ",
+    "gender": "male",
+    "featuredCategory": "shirts",
+    "bestSeller": false,
+    "onSale": false,
+    "price": 6999,
+    "compareAt": null,
+    "image": "https://www.breakout.com.pk/cdn/shop/files/6DSHP806-BGE_2.jpg?v=1781677513&width=840",
+    "category": "full_body",
+    "garment_type": "kurta_shalwar"
+  },
+  {
+    "id": "formal-pant-shirt-suit",
+    "name": "FORMAL PANT SHIRT SUIT",
+    "gender": "male",
+    "featuredCategory": "shirts",
+    "bestSeller": true,
+    "onSale": false,
+    "price": 12999,
+    "compareAt": null,
+    "image": "https://www.breakout.com.pk/cdn/shop/files/6DSFW667-BLU_4.jpg?v=1779176897&width=840",
+    "category": "full_body",
+    "garment_type": "suit"
+  },
+  {
+    "id": "two-piece-formal-suit",
+    "name": "TWO PIECE FORMAL SUIT",
+    "gender": "male",
+    "featuredCategory": "shirts",
+    "bestSeller": false,
+    "onSale": false,
+    "price": 14999,
+    "compareAt": null,
+    "image": "https://www.breakout.com.pk/cdn/shop/files/6DSHP806-BGE_2.jpg?v=1781677513&width=840",
+    "category": "full_body",
+    "garment_type": "suit"
+  },
+  {
+    "id": "relaxed-cotton-pant",
+    "name": "RELAXED COTTON PANT",
+    "gender": "male",
+    "featuredCategory": "trousers",
+    "bestSeller": true,
+    "onSale": false,
+    "price": 3499,
+    "compareAt": null,
+    "image": "https://www.breakout.com.pk/cdn/shop/files/26FWP310-BRN_1.jpg?v=1787554576&width=840",
+    "category": "lower_body",
+    "garment_type": "pant"
+  },
+  {
+    "id": "slim-fit-chino-trouser",
+    "name": "SLIM FIT CHINO TROUSER",
+    "gender": "male",
+    "featuredCategory": "trousers",
+    "bestSeller": false,
+    "onSale": false,
+    "price": 3999,
+    "compareAt": null,
+    "image": "https://www.breakout.com.pk/cdn/shop/files/26FWP310-BRN_1.jpg?v=1787554576&width=840",
+    "category": "lower_body",
+    "garment_type": "trouser"
+  },
+  {
+    "id": "casual-denim-shorts",
+    "name": "CASUAL DENIM SHORTS",
+    "gender": "male",
+    "featuredCategory": "trousers",
+    "bestSeller": true,
+    "onSale": false,
+    "price": 2999,
+    "compareAt": null,
+    "image": "https://www.breakout.com.pk/cdn/shop/files/26FWT310-BRN_1.jpg?v=1787554560&width=840",
+    "category": "lower_body",
+    "garment_type": "shorts"
+  },
+  {
+    "id": "linen-summer-shorts",
+    "name": "LINEN SUMMER SHORTS",
+    "gender": "male",
+    "featuredCategory": "trousers",
+    "bestSeller": false,
+    "onSale": false,
+    "price": 2799,
+    "compareAt": null,
+    "image": "https://www.breakout.com.pk/cdn/shop/files/26FWT310-BRN_1.jpg?v=1787554560&width=840",
+    "category": "lower_body",
+    "garment_type": "shorts"
+  },
+  {
+    "id": "oxford-cotton-shirt",
+    "name": "OXFORD COTTON SHIRT",
+    "gender": "male",
+    "featuredCategory": "shirts",
+    "bestSeller": true,
+    "onSale": false,
+    "price": 3299,
+    "compareAt": null,
+    "image": "https://www.breakout.com.pk/cdn/shop/files/6DSFW667-BLU_4.jpg?v=1779176897&width=840",
+    "category": "upper_body",
+    "garment_type": "shirt"
+  },
+  {
+    "id": "structured-blazer-jacket",
+    "name": "STRUCTURED BLAZER JACKET",
+    "gender": "male",
+    "featuredCategory": "shirts",
+    "bestSeller": true,
+    "onSale": false,
+    "price": 8999,
+    "compareAt": null,
+    "image": "https://www.breakout.com.pk/cdn/shop/files/6DSHP806-BGE_2.jpg?v=1781677513&width=840",
+    "category": "upper_body",
+    "garment_type": "jacket"
+  },
+  {
+    "id": "wool-overcoat",
+    "name": "WOOL OVERCOAT",
+    "gender": "male",
+    "featuredCategory": "shirts",
+    "bestSeller": false,
+    "onSale": false,
+    "price": 11999,
+    "compareAt": null,
+    "image": "https://www.breakout.com.pk/cdn/shop/files/6DSFW667-BLU_4.jpg?v=1779176897&width=840",
+    "category": "upper_body",
+    "garment_type": "coat"
   }
 ];
 
@@ -764,6 +1025,10 @@ function getBestSellers(gender, limit = 6) {
   return sellers.length ? sellers.slice(0, limit) : PRODUCTS.filter((p) => p.gender === gender).slice(0, limit);
 }
 
+function getProductsByVtonCategory(category, limit = 12) {
+  return PRODUCTS.filter((p) => p.category === category).slice(0, limit);
+}
+
 function formatPrice(amount) {
   return "PKR " + amount.toLocaleString("en-PK");
 }
@@ -776,4 +1041,18 @@ function formatPriceHtml(product) {
     );
   }
   return `<span class="price-regular">Price:${formatPrice(product.price)}</span>`;
+}
+
+/** Explicit globals so all scripts can access catalog data. */
+if (typeof window !== "undefined") {
+  window.PRODUCTS = PRODUCTS;
+  window.HERO_SLIDES = HERO_SLIDES;
+  window.getProduct = getProduct;
+  window.getProducts = getProducts;
+  window.getBestSellers = getBestSellers;
+  window.getProductsByVtonCategory = getProductsByVtonCategory;
+  window.formatPrice = formatPrice;
+  window.formatPriceHtml = formatPriceHtml;
+  window.vtonCategoryLabel = vtonCategoryLabel;
+  window.garmentTypeLabel = garmentTypeLabel;
 }

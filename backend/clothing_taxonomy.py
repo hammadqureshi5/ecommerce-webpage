@@ -1,12 +1,17 @@
 """Clothing labels aligned with ``vton_supported_combinations.csv``.
 
-Person (Image 1) uses outfit classes: shirt_pant, kurta_shalwar, dress, suit
-(CSV ``person_outfit`` values).
-Garment (Image 2) uses product classes from the CSV garment_type column.
+Person (Image 1) uses outfit classes from the CSV ``person_outfit`` column.
+Garment (Image 2) uses product classes from the CSV ``garment_type`` column.
+
+``csv_person_outfits`` / ``csv_garment_types`` expose only labels that appear
+in the CSV, so SigLIP never scores a class that is not a supported category.
 """
 from __future__ import annotations
 
 from dataclasses import dataclass
+from functools import lru_cache
+
+import combinations
 
 
 @dataclass(frozen=True)
@@ -35,13 +40,6 @@ PERSON_OUTFITS: dict[str, LabelSpec] = {
             "a person wearing a long South Asian tunic with baggy trousers",
         ),
     ),
-    "dress": LabelSpec(
-        key="dress",
-        prompts=(
-            "a person wearing a dress or gown",
-            "a person in a one-piece dress",
-        ),
-    ),
     "suit": LabelSpec(
         key="suit",
         prompts=(
@@ -52,27 +50,17 @@ PERSON_OUTFITS: dict[str, LabelSpec] = {
 }
 
 
-# What Image 2 shows (CSV garment_type) — flat-lay, mannequin, or on-model.
+# What Image 2 shows (CSV garment_type).
 GARMENT_TYPES: dict[str, LabelSpec] = {
     "shirt": LabelSpec(
         key="shirt",
         prompts=(
             "a button-up shirt or blouse product photo",
-            "a waist-length collared shirt flat lay",
-        ),
-    ),
-    "tshirt": LabelSpec(
-        key="tshirt",
-        prompts=(
+            "a waist-length collared shirt as the main garment",
+            "a person modelling a button-up shirt",
             "a t-shirt or tee product photo",
-            "a casual crew-neck t-shirt flat lay",
-        ),
-    ),
-    "kurta": LabelSpec(
-        key="kurta",
-        prompts=(
-            "a long kurta or tunic product photo",
-            "a South Asian long top with side slits",
+            "a casual crew-neck short-sleeve tee as the main garment",
+            "a person modelling a short-sleeve striped t-shirt",
         ),
     ),
     "jacket": LabelSpec(
@@ -89,46 +77,26 @@ GARMENT_TYPES: dict[str, LabelSpec] = {
             "an overcoat flat lay",
         ),
     ),
-    "jeans": LabelSpec(
-        key="jeans",
-        prompts=(
-            "a pair of jeans product photo",
-            "denim jeans flat lay",
-        ),
-    ),
     "pant": LabelSpec(
         key="pant",
         prompts=(
-            "a pair of pants product photo",
-            "casual pants flat lay",
+            "a pair of pants alone with no shirt visible",
+            "casual pants or denim product flat lay showing only the bottoms",
+            "a pair of jeans or casual pants alone",
         ),
     ),
     "trouser": LabelSpec(
         key="trouser",
         prompts=(
-            "a pair of formal trousers product photo",
-            "dress trousers flat lay",
+            "a pair of formal trousers alone with no shirt visible",
+            "dress trousers flat lay showing only the pants",
         ),
     ),
     "shorts": LabelSpec(
         key="shorts",
         prompts=(
-            "a pair of shorts product photo",
-            "shorts flat lay",
-        ),
-    ),
-    "shalwar": LabelSpec(
-        key="shalwar",
-        prompts=(
-            "a pair of shalwar trousers product photo",
-            "loose South Asian shalwar pants",
-        ),
-    ),
-    "dress": LabelSpec(
-        key="dress",
-        prompts=(
-            "a one-piece dress product photo",
-            "a dress flat lay or on a mannequin",
+            "a pair of shorts alone with no shirt visible",
+            "shorts product flat lay showing only the bottoms",
         ),
     ),
     "suit": LabelSpec(
@@ -142,7 +110,8 @@ GARMENT_TYPES: dict[str, LabelSpec] = {
         key="shirt_pant",
         prompts=(
             "a complete shirt and pants outfit product photo",
-            "a coordinated two-piece shirt and bottom set",
+            "a coordinated two-piece shirt and bottom set on a model",
+            "a matching t-shirt and pants outfit as one product",
         ),
     ),
     "kurta_shalwar": LabelSpec(
@@ -153,6 +122,21 @@ GARMENT_TYPES: dict[str, LabelSpec] = {
         ),
     ),
 }
+
+
+@lru_cache(maxsize=1)
+def csv_person_outfits() -> dict[str, LabelSpec]:
+    """Person labels that appear in the CSV (taxonomy ∩ CSV)."""
+    allowed = {row[1] for row in combinations.all_combos()}
+    return {k: v for k, v in PERSON_OUTFITS.items() if k in allowed}
+
+
+@lru_cache(maxsize=1)
+def csv_garment_types() -> dict[str, LabelSpec]:
+    """Garment labels that appear in the CSV (taxonomy ∩ CSV)."""
+    allowed = {row[2] for row in combinations.all_combos()}
+    return {k: v for k, v in GARMENT_TYPES.items() if k in allowed}
+
 
 VALID_PERSON_OUTFITS = frozenset(PERSON_OUTFITS)
 VALID_GARMENT_TYPES = frozenset(GARMENT_TYPES)

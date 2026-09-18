@@ -1,0 +1,31 @@
+The first image is the person. The second image is the garment reference.
+
+Replace the person's upper-body garment with the garment from the reference
+image. Keep the reference garment's exact category, colour, pattern, fabric
+texture, sleeve length, collar, buttons, stripes and print, fitted naturally to
+the body with realistic folds at the shoulders and elbows.
+
+Change nothing below the waist. The lower-body garment, its waistband, its
+colour and its drape stay exactly as in the first image.
+
+Do not create a tunic, kurta, coat, hoodie, dress or oversized version unless
+the reference explicitly shows one.
+
+Reveal only the body parts that are naturally exposed by the reference garment.
+If shorter sleeves expose additional skin, synthesize realistic arms with
+correct anatomy, proportions, skin texture, lighting and shadows that seamlessly
+integrate with the existing body.
+
+Sleeves. Match where the sleeve hem falls on the arm in the reference. A sleeve
+ending on the upper arm above the elbow stays a short sleeve, with the forearm
+bare below it. A sleeve ending at the wrist stays a long sleeve, covering the
+whole forearm down to the hand, on both arms alike. Bare skin on the arm in the
+first image is not a reason to shorten a sleeve, and neither is a sleeve the
+person has rolled or pushed up: where the reference sleeve reaches the wrist, the
+forearm is repainted with cloth over it. Keep the same width and cut at that hem,
+whether it is a plain turned edge, a ribbed band or a buttoned cuff. Do not
+lengthen a short sleeve or shorten a long one, and do not change it to suit the
+weather, the setting or the rest of the outfit.
+
+Keep the person's face, hair, skin tone, body shape, hands, pose, footwear,
+background, lighting and camera angle exactly as they are.

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product | Modern Elegance</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="js/tailwind-theme.js"></script>
+  <script>tailwind.config = { darkMode: "class", theme: { extend: window.ELITE_TAILWIND } };</script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: Inter, sans-serif; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    .gallery-thumb.active { border: 1px solid #041627; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col pt-20">
+
+  <header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/20">
+    <div class="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center h-20 px-8 xl:px-12 max-w-[1600px] mx-auto w-full">
+      <nav class="flex items-center gap-8">
+        <a href="index.html#trending" class="font-label-md text-label-md text-primary uppercase tracking-[0.15em] hover:text-surface-tint transition-colors">Shop</a>
+        <a href="index.html#section-women" class="font-label-md text-label-md text-primary uppercase tracking-[0.15em] hover:text-surface-tint transition-colors">Collections</a>
+        <a href="index.html" class="font-label-md text-label-md text-primary uppercase tracking-[0.15em] hover:text-surface-tint transition-colors">Editorial</a>
+      </nav>
+      <a href="index.html" class="font-display-lg text-[clamp(1.25rem,2.5vw,1.75rem)] tracking-[0.12em] text-primary uppercase text-center whitespace-nowrap px-4">Modern Elegance</a>
+      <div class="flex items-center justify-end gap-8">
+        <a href="index.html" class="font-label-md text-label-md text-primary uppercase tracking-[0.15em] hover:text-surface-tint transition-colors">Search</a>
+        <span class="font-label-md text-label-md text-primary uppercase tracking-[0.15em]">Profile</span>
+        <button type="button" data-open-cart class="text-primary hover:text-surface-tint transition-colors relative" aria-label="Shopping bag">
+          <span class="material-symbols-outlined text-[26px]">shopping_bag</span>
+          <span data-cart-count class="absolute -top-1 -right-2 text-[10px] font-label-md bg-primary text-on-primary rounded-full min-w-[16px] h-4 flex items-center justify-center px-1">0</span>
+        </button>
+      </div>
+    </div>
+    <div class="lg:hidden flex justify-between items-center h-16 px-4">
+      <a href="index.html" class="font-label-md text-primary uppercase tracking-widest">← Back</a>
+      <a class="font-display-lg text-[18px] tracking-[0.1em] text-primary uppercase" href="index.html">Modern Elegance</a>
+      <button type="button" data-open-cart class="text-primary relative" aria-label="Cart">
+        <span class="material-symbols-outlined">shopping_bag</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-grow w-full max-w-[1280px] mx-auto px-container-padding py-stack-lg">
+    <section class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-24 mb-32">
+      <div class="md:col-span-7 flex flex-col md:flex-row gap-6 min-h-[600px]">
+        <div id="gallery-thumbs" class="hidden md:flex flex-col gap-4 w-24 flex-shrink-0"></div>
+        <div class="relative flex-grow h-full min-h-[400px] rounded-lg overflow-hidden bg-surface-container-lowest shadow-[0_4px_30px_-5px_rgba(26,43,60,0.08)] group">
+          <img id="main-hero-image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="" />
+          <button type="button" id="btn-vto-float" aria-label="Virtual Fitting Room" class="absolute bottom-6 right-6 bg-surface/90 backdrop-blur-md text-primary p-4 rounded-full shadow-lg hover:scale-105 transition-all">
+            <span class="material-symbols-outlined text-2xl">view_in_ar</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="md:col-span-5 flex flex-col justify-center">
+        <h1 id="product-title" class="font-display-lg text-display-lg text-primary mb-2 leading-tight"></h1>
+        <p id="product-price" class="font-body-lg text-body-lg text-on-surface-variant mb-3"></p>
+        <p id="product-vton-meta" class="font-label-md text-on-surface-variant uppercase tracking-wide mb-8"></p>
+        <p class="font-body-md text-on-surface mb-10 leading-relaxed">Premium quality garment from our curated collection. Virtual try-on available — upload your photo to see how it looks on you.</p>
+
+        <div class="mb-10">
+          <div class="flex justify-between items-end mb-4">
+            <h3 class="font-label-lg text-primary uppercase tracking-wider">Size</h3>
+          </div>
+          <div id="size-grid" class="grid grid-cols-4 gap-3"></div>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <button type="button" id="btn-add-bag" class="w-full bg-primary text-white font-label-lg py-4 rounded-sm hover:bg-primary-container transition-colors">Add to Bag</button>
+          <button type="button" id="btn-try-on" class="w-full bg-transparent border border-primary text-primary font-label-lg py-4 rounded-sm hover:bg-surface-container-low transition-colors flex justify-center items-center gap-2">
+            <span class="material-symbols-outlined">view_in_ar</span> Virtual Try-On
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-16">
+      <h2 class="font-display-lg text-headline-lg text-primary mb-12">Complete the Look</h2>
+      <div id="related-grid" class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12"></div>
+    </section>
+  </main>
+
+  <footer class="w-full mt-stack-lg bg-surface-container-highest border-t border-outline-variant py-stack-md">
+    <div class="text-center px-container-padding max-w-[1280px] mx-auto">
+      <span class="font-display-lg text-headline-md text-primary">Modern Elegance</span>
+      <p class="font-body-sm text-on-surface-variant mt-2">© 2026 Modern Elegance</p>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="cart-scrim" class="fixed inset-0 bg-scrim z-[70] hidden opacity-0 transition-opacity duration-300"></div>
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-surface-container-lowest z-[75] shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="flex justify-between items-center p-6 border-b border-outline-variant">
+      <h2 class="font-headline-md text-primary">Your Bag (<span data-cart-count>0</span>)</h2>
+      <button type="button" data-close-cart aria-label="Close"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <div id="cart-body" class="flex-1 overflow-y-auto p-6"></div>
+  </aside>
+
+  <script src="js/config.js?v=20260902"></script>
+  <script src="js/products.js?v=20260902"></script>
+  <script src="js/elite-cart.js?v=20260902"></script>
+  <script src="js/elite-vton.js?v=20260902"></script>
+  <script src="js/elite-product.js?v=20260902"></script>
+</body>
+</html>

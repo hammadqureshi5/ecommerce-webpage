@@ -5,7 +5,8 @@ and a garment photo. The server classifies clothing, picks a prompt, builds a
 mask, calls Flux, and returns the result image(s).
 
 ```text
-Website  →  POST /api/generate  →  classify → CSV → prompt → mask → Flux
+Website  →  POST /api/generate
+         →  garment face-crop → classify → CSV → prompt → mask → Flux
 ```
 
 The browser never talks to Flux. Set `FLUX_BASE_URL` in `.env` only.
@@ -14,6 +15,36 @@ Routing uses the **tested** files in this folder:
 
 - `vton_supported_combinations.csv`
 - `prompts/` (active `.txt` files only; `DISCARD/` is ignored)
+
+## Module tests (no Flux GPU call)
+
+Test each stage independently. Artifacts land in `test_output/`.
+
+```bash
+cd vton-demo/backend
+python test_modules.py                 # all modules
+python test_modules.py combinations    # CSV lookup
+python test_modules.py prompts         # prompt resolution for every CSV row
+python test_modules.py preprocess      # garment face detect + crop
+python test_modules.py classify        # SigLIP person + garment labels
+python test_modules.py mask            # person clothing-agnostic mask
+python test_modules.py dry             # crop → classify → CSV → prompt (stops before Flux)
+```
+
+Optional image paths:
+
+```bash
+python test_modules.py preprocess ..\images\f-dress-red.jpg
+python test_modules.py classify ..\images\m-suit-navy.jpg ..\images\m-shirt-blue.jpg
+python test_modules.py dry ..\images\m-suit-navy.jpg ..\images\f-dress-red.jpg
+```
+
+| Module | What it checks | Output |
+|--------|----------------|--------|
+| `preprocess` | Face found → crop below chin; else leave image | `04_garment_preprocess.json`, `04_crop_*.png` |
+| `classify` | Person → `person_outfit`, garment → `garment_type` | `05_classify.json` |
+| `prompts` | Right `.txt` for each CSV combo | `02_prompts.json` |
+| `dry` | Full path except Flux | `06_pipeline_dry.json`, `06_prompt.txt` |
 
 ## Setup
 
@@ -116,7 +147,7 @@ if (!res.ok) throw new Error(data.error || "try-on failed");
 |-------|----------|---------|
 | `image_a` | yes | Person photo (file) |
 | `image_b` | yes | Garment photo (file) |
-| `garment_type` | no | CSV type (`shirt`, `jeans`, …). Skips garment classification |
+| `garment_type` | no | CSV type (`shirt`, `pant`, `tshirt`, …). Skips garment classification |
 | `person_outfit` | no | CSV outfit (`shirt_pant`, …). Skips person classification |
 | `vton_type` | no | `upper_body` / `lower_body` / `full_body` |
 | `use_mask` | no | Default on; set `0` to disable |
@@ -127,15 +158,17 @@ if (!res.ok) throw new Error(data.error || "try-on failed");
 ```text
 backend/
   app.py                 # Flask routes
-  pipeline.py            # classify → CSV → prompt → mask → Flux
+  pipeline.py            # crop → classify → CSV → prompt → mask → Flux
+  garment_preprocess.py  # face detect + crop garment below chin
   classify.py            # SigLIP → CSV labels
   clothing_taxonomy.py   # label prompts for SigLIP
   combinations.py        # CSV lookup
   prompts.py             # load prompts/*.txt
   mask.py                # YOLO clothing-agnostic person image
   flux_client.py         # Flux job submit + poll (FLUX_BASE_URL)
+  test_modules.py        # per-module tests → test_output/
   vton_supported_combinations.csv
-  prompts/               # full-body / upper-body / lower-body .txt files
+  prompts/               # full_body / upper_body / lower_body .txt files
 ```
 
 ## Notes

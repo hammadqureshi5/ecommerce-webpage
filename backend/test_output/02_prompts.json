@@ -1,0 +1,156 @@
+[
+  {
+    "vton_type": "full_body",
+    "person_outfit": "shirt_pant",
+    "garment_type": "shirt_pant",
+    "prompt": "shirt_pant_to_shirt_pant",
+    "ok": true
+  },
+  {
+    "vton_type": "full_body",
+    "person_outfit": "shirt_pant",
+    "garment_type": "kurta_shalwar",
+    "prompt": "shirt_pant_to_kurta_shalwar",
+    "ok": true
+  },
+  {
+    "vton_type": "full_body",
+    "person_outfit": "kurta_shalwar",
+    "garment_type": "shirt_pant",
+    "prompt": "kurta_shalwar_to_shirt_pant",
+    "ok": true
+  },
+  {
+    "vton_type": "full_body",
+    "person_outfit": "kurta_shalwar",
+    "garment_type": "kurta_shalwar",
+    "prompt": "kurta_shalwar_to_kurta_shalwar",
+    "ok": true
+  },
+  {
+    "vton_type": "full_body",
+    "person_outfit": "suit",
+    "garment_type": "suit",
+    "prompt": "suit_to_suit",
+    "ok": true
+  },
+  {
+    "vton_type": "full_body",
+    "person_outfit": "suit",
+    "garment_type": "shirt_pant",
+    "prompt": "suit_to_shirt_pant",
+    "ok": true
+  },
+  {
+    "vton_type": "full_body",
+    "person_outfit": "shirt_pant",
+    "garment_type": "suit",
+    "prompt": "shirt_pant_to_suit",
+    "ok": true
+  },
+  {
+    "vton_type": "full_body",
+    "person_outfit": "kurta_shalwar",
+    "garment_type": "suit",
+    "prompt": "kurta_shalwar_to_suit",
+    "ok": true
+  },
+  {
+    "vton_type": "full_body",
+    "person_outfit": "suit",
+    "garment_type": "kurta_shalwar",
+    "prompt": "suit_to_kurta_shalwar",
+    "ok": true
+  },
+  {
+    "vton_type": "upper_body",
+    "person_outfit": "shirt_pant",
+    "garment_type": "shirt",
+    "prompt": "shirt_pant_to_shirt",
+    "ok": true
+  },
+  {
+    "vton_type": "upper_body",
+    "person_outfit": "kurta_shalwar",
+    "garment_type": "shirt",
+    "prompt": "kurta_shalwar_to_shirt",
+    "ok": true
+  },
+  {
+    "vton_type": "upper_body",
+    "person_outfit": "suit",
+    "garment_type": "shirt",
+    "prompt": "suit_to_shirt",
+    "ok": true
+  },
+  {
+    "vton_type": "upper_body",
+    "person_outfit": "shirt_pant",
+    "garment_type": "jacket",
+    "prompt": "shirt_pant_to_jacket",
+    "ok": true
+  },
+  {
+    "vton_type": "upper_body",
+    "person_outfit": "shirt_pant",
+    "garment_type": "coat",
+    "prompt": "shirt_pant_to_coat",
+    "ok": true
+  },
+  {
+    "vton_type": "upper_body",
+    "person_outfit": "kurta_shalwar",
+    "garment_type": "jacket",
+    "prompt": "kurta_shalwar__to__jacket",
+    "ok": true
+  },
+  {
+    "vton_type": "upper_body",
+    "person_outfit": "kurta_shalwar",
+    "garment_type": "coat",
+    "prompt": "kurta_shalwar__to__coat",
+    "ok": true
+  },
+  {
+    "vton_type": "lower_body",
+    "person_outfit": "shirt_pant",
+    "garment_type": "pant",
+    "prompt": "shirt_pant_to_pant",
+    "ok": true
+  },
+  {
+    "vton_type": "lower_body",
+    "person_outfit": "shirt_pant",
+    "garment_type": "trouser",
+    "prompt": "shirt_pant_to_trouser",
+    "ok": true
+  },
+  {
+    "vton_type": "lower_body",
+    "person_outfit": "shirt_pant",
+    "garment_type": "shorts",
+    "prompt": "shirt_pant_to_shorts",
+    "ok": true
+  },
+  {
+    "vton_type": "lower_body",
+    "person_outfit": "kurta_shalwar",
+    "garment_type": "pant",
+    "prompt": "kurta_shalwar_to_pant",
+    "ok": true
+  },
+  {
+    "vton_type": "lower_body",
+    "person_outfit": "kurta_shalwar",
+    "garment_type": "trouser",
+    "prompt": "kurta_shalwar_to_trouser",
+    "ok": true
+  },
+  {
+    "vton_type": "lower_body",
+    "person_outfit": "kurta_shalwar",
+    "garment_type": "shorts",
+    "prompt": "kurta_shalwar_to_shorts",
+    "ok": true
+  }
+]
