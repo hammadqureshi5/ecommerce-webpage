@@ -133,7 +133,7 @@ const EliteCart = (function () {
       </ul>
       <div class="border-t border-outline-variant pt-4 space-y-3">
         <p class="font-label-lg text-primary flex justify-between"><span>Total</span><span>${formatPrice(total)}</span></p>
-        <a href="../checkout.html" class="block w-full text-center bg-primary text-on-primary font-label-lg py-3 rounded-lg hover:bg-primary-container transition-colors">Checkout</a>
+        <a href="checkout.html" class="block w-full text-center bg-primary text-on-primary font-label-lg py-3 rounded-lg hover:bg-primary-container transition-colors">Checkout</a>
         <button type="button" data-close-cart class="block w-full border border-outline font-label-lg py-3 rounded-lg text-on-surface hover:bg-surface-container transition-colors">Continue shopping</button>
       </div>`;
 
@@ -165,5 +165,14 @@ const EliteCart = (function () {
   render();
   document.addEventListener("DOMContentLoaded", bindUi);
 
-  return { add, remove, setQty, getCount, getTotal, openDrawer, closeDrawer, render };
+  function getItems() {
+    return items.map((i) => ({ ...i }));
+  }
+
+  function clear() {
+    items = [];
+    save();
+  }
+
+  return { add, remove, setQty, getCount, getTotal, getItems, clear, openDrawer, closeDrawer, render };
 })();
