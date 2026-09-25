@@ -158,8 +158,12 @@ const EliteVTON = (function () {
     product = null;
   }
 
+  let generating = false;
+
   async function generate() {
-    if (!personFile || !product) return;
+    if (!personFile || !product || generating) return;
+    const selectedProduct = product;
+    const selectedPhoto = personFile;
 
     const cfg = typeof VTON_CONFIG !== "undefined" ? VTON_CONFIG : { API_ENABLED: false, API_BASE: "" };
 
@@ -168,23 +172,23 @@ const EliteVTON = (function () {
       return;
     }
 
+    generating = true;
     els.generateBtn.disabled = true;
     els.loading.classList.remove("hidden");
     hideStatus();
 
     try {
-      const health = await fetch(`${cfg.API_BASE}/health`);
-      if (!health.ok) throw new Error(`Backend not reachable at ${cfg.API_BASE}`);
+      const photo = await VtonRequest.photo(selectedPhoto);
+      const health = await VtonRequest.json(`${cfg.API_BASE}/health`, {}, "Backend health check", 20000);
+      if (!health.ok) throw new Error("The image generation server is unavailable. Please try again shortly.");
 
       const form = new FormData();
-      form.append("image_a", personFile);
-      form.append("garment_url", product.image);
-      form.append("garment_type", product.garment_type || "shirt_pant");
-      form.append("vton_type", product.category || "full_body");
+      form.append("image_a", photo, "person.jpg");
+      form.append("garment_url", selectedProduct.image);
+      form.append("garment_type", selectedProduct.garment_type || "shirt_pant");
+      form.append("vton_type", selectedProduct.category || "full_body");
 
-      const res = await fetch(`${cfg.API_BASE}/api/generate`, { method: "POST", body: form });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Try-on failed");
+      const data = await VtonRequest.json(`${cfg.API_BASE}/api/generate`, { method: "POST", body: form });
       if (!data.images?.[0]) throw new Error("No image returned from backend");
 
       els.garmentPreview.classList.add("hidden");
@@ -194,6 +198,8 @@ const EliteVTON = (function () {
       showStatus(err.message || "Something went wrong.", "error");
       els.generateBtn.disabled = false;
     } finally {
+      generating = false;
+      els.generateBtn.disabled = !personFile;
       els.loading.classList.add("hidden");
     }
   }
