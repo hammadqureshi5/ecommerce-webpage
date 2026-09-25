@@ -306,7 +306,7 @@ const PRODUCTS = [
   },
   {
     "id": "baggy-fit-graphic-tee",
-    "name": "BAGGY FIT GRAPHIC TEE",
+    "name": "BAGGY FIT ",
     "gender": "male",
     "featuredCategory": "tees",
     "bestSeller": false,
@@ -314,11 +314,11 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6ESHT836-KHK_5.jpg?v=1786452091&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
-    "id": "textured-striped-tee",
+    "id": "textured-Dress",
     "name": "TEXTURED STRIPED TEE",
     "gender": "male",
     "featuredCategory": "tees",
@@ -331,34 +331,8 @@ const PRODUCTS = [
     "garment_type": "shirt_pant"
   },
   {
-    "id": "textured-tee",
-    "name": "TEXTURED TEE",
-    "gender": "male",
-    "featuredCategory": "tees",
-    "bestSeller": false,
-    "onSale": false,
-    "price": 3899,
-    "compareAt": null,
-    "image": "https://www.breakout.com.pk/cdn/shop/files/6ESHT831L-BLK_4.jpg?v=1786454279&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
-  },
-  {
-    "id": "relaxed-fit-cloud-feel-tee",
-    "name": "RELAXED FIT CLOUD FEEL TEE",
-    "gender": "male",
-    "featuredCategory": "tees",
-    "bestSeller": false,
-    "onSale": false,
-    "price": 3899,
-    "compareAt": null,
-    "image": "https://www.breakout.com.pk/cdn/shop/files/6ESHT821-WHT_4.jpg?v=1786513574&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
-  },
-  {
     "id": "boxy-fit-tee",
-    "name": "BOXY FIT TEE",
+    "name": "BOXY FIT ",
     "gender": "male",
     "featuredCategory": "tees",
     "bestSeller": false,
@@ -366,8 +340,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6ESHT820-OLV_1.jpg?v=1786513608&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "baggy-fit-shirt",
@@ -384,7 +358,7 @@ const PRODUCTS = [
   },
   {
     "id": "baggy-fit-check-shirt",
-    "name": "BAGGY FIT CHECK SHIRT",
+    "name": "BAGGY FIT CHECK ",
     "gender": "male",
     "featuredCategory": "shirts",
     "bestSeller": false,
@@ -392,8 +366,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6ESFW855-PGN_5.jpg?v=1786537915&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "button-down-dobby-shirt",
@@ -405,21 +379,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6ESFW843-SBU_4.jpg?v=1786513456&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
-  },
-  {
-    "id": "button-down-check-shirt",
-    "name": "BUTTON DOWN CHECK SHIRT",
-    "gender": "male",
-    "featuredCategory": "shirts",
-    "bestSeller": false,
-    "onSale": false,
-    "price": 3899,
-    "compareAt": null,
-    "image": "https://www.breakout.com.pk/cdn/shop/files/6ESFW817-STN_4.jpg?v=1786513486&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "slim-relaxed-fit-denim",
@@ -548,8 +509,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6DSWT912-MTO_6.jpg?v=1782899185&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "straight-fit-denim",
@@ -587,8 +548,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6DSWT770-OFW_1.jpg?v=1779529132&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "straight-fit-pleated-denim",
@@ -605,7 +566,7 @@ const PRODUCTS = [
   },
   {
     "id": "pinstripe-blazer",
-    "name": "PINSTRIPE BLAZER",
+    "name": "PINSTRIPE BLAZER SUIT",
     "gender": "female",
     "featuredCategory": "shirts",
     "bestSeller": true,
@@ -613,8 +574,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6DSWT748-BRG_1.jpg?v=1779350835&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "suit"
   },
   {
     "id": "embroidered-japanese-knit-top",
@@ -626,8 +587,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6ESNT973-GRN_6.jpg?v=1787390083&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "sashed-kimono-top",
@@ -639,8 +600,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6ESNT967-RED_2.jpg?v=1787390088&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "tank-top-with-seam-detail",
@@ -652,8 +613,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6ESNT948-PNK_4.jpg?v=1787230077&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "graphic-button-down-knit-top",
@@ -665,12 +626,12 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6ESNT938-PNK_7.jpg?v=1787230098&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "graphic-regular-tee",
-    "name": "GRAPHIC REGULAR TEE",
+    "name": "GRAPHIC REGULAR",
     "gender": "male",
     "featuredCategory": "tees",
     "bestSeller": false,
@@ -678,8 +639,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6ESNT947-BLU_1.jpg?v=1786534937&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "textured-button-down-top",
@@ -691,8 +652,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6ESWT970-BRN_2.jpg?v=1787390021&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "oversized-top-with-sleeve-detail",
@@ -704,8 +665,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6ESWT936-BRN_4.jpg?v=1787230052&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "oversized-button-down-shirt",
@@ -730,8 +691,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6ESWT946-MTO_2.jpg?v=1786534773&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "graphic-top-with-tie-detail",
@@ -743,8 +704,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6ESWT915-OFW_1.jpg?v=1786515170&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "cropped-printed-button-down-shirt",
@@ -756,8 +717,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6ESWT914-WHT_1.jpg?v=1786515176&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "mega-wide-denim",
@@ -808,8 +769,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/26FWT328-BRN_1.jpg?v=1787554533&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "wide-leg-trousers",
@@ -834,8 +795,8 @@ const PRODUCTS = [
     "price": 3899,
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/26FNT312-BGE_4.jpg?v=1787554624&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
+    "category": "full_body",
+    "garment_type": "shirt_pant"
   },
   {
     "id": "oversized-top-with-balloon-sleeves",
@@ -874,7 +835,7 @@ const PRODUCTS = [
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6DSFW667-BLU_4.jpg?v=1779176897&width=840",
     "category": "full_body",
-    "garment_type": "kurta_shalwar"
+    "garment_type": "shirt_pant"
   },
   {
     "id": "embroidered-shalwar-kameez",
@@ -887,7 +848,7 @@ const PRODUCTS = [
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6DSHP806-BGE_2.jpg?v=1781677513&width=840",
     "category": "full_body",
-    "garment_type": "kurta_shalwar"
+    "garment_type": "shirt_pant"
   },
   {
     "id": "formal-pant-shirt-suit",
@@ -900,7 +861,7 @@ const PRODUCTS = [
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6DSFW667-BLU_4.jpg?v=1779176897&width=840",
     "category": "full_body",
-    "garment_type": "suit"
+    "garment_type": "shirt_pant"
   },
   {
     "id": "two-piece-formal-suit",
@@ -913,7 +874,7 @@ const PRODUCTS = [
     "compareAt": null,
     "image": "https://www.breakout.com.pk/cdn/shop/files/6DSHP806-BGE_2.jpg?v=1781677513&width=840",
     "category": "full_body",
-    "garment_type": "suit"
+    "garment_type": "shirt_pant"
   },
   {
     "id": "relaxed-cotton-pant",
@@ -940,71 +901,6 @@ const PRODUCTS = [
     "image": "https://www.breakout.com.pk/cdn/shop/files/26FWP310-BRN_1.jpg?v=1787554576&width=840",
     "category": "lower_body",
     "garment_type": "trouser"
-  },
-  {
-    "id": "casual-denim-shorts",
-    "name": "CASUAL DENIM SHORTS",
-    "gender": "male",
-    "featuredCategory": "trousers",
-    "bestSeller": true,
-    "onSale": false,
-    "price": 2999,
-    "compareAt": null,
-    "image": "https://www.breakout.com.pk/cdn/shop/files/26FWT310-BRN_1.jpg?v=1787554560&width=840",
-    "category": "lower_body",
-    "garment_type": "shorts"
-  },
-  {
-    "id": "linen-summer-shorts",
-    "name": "LINEN SUMMER SHORTS",
-    "gender": "male",
-    "featuredCategory": "trousers",
-    "bestSeller": false,
-    "onSale": false,
-    "price": 2799,
-    "compareAt": null,
-    "image": "https://www.breakout.com.pk/cdn/shop/files/26FWT310-BRN_1.jpg?v=1787554560&width=840",
-    "category": "lower_body",
-    "garment_type": "shorts"
-  },
-  {
-    "id": "oxford-cotton-shirt",
-    "name": "OXFORD COTTON SHIRT",
-    "gender": "male",
-    "featuredCategory": "shirts",
-    "bestSeller": true,
-    "onSale": false,
-    "price": 3299,
-    "compareAt": null,
-    "image": "https://www.breakout.com.pk/cdn/shop/files/6DSFW667-BLU_4.jpg?v=1779176897&width=840",
-    "category": "upper_body",
-    "garment_type": "shirt"
-  },
-  {
-    "id": "structured-blazer-jacket",
-    "name": "STRUCTURED BLAZER JACKET",
-    "gender": "male",
-    "featuredCategory": "shirts",
-    "bestSeller": true,
-    "onSale": false,
-    "price": 8999,
-    "compareAt": null,
-    "image": "https://www.breakout.com.pk/cdn/shop/files/6DSHP806-BGE_2.jpg?v=1781677513&width=840",
-    "category": "upper_body",
-    "garment_type": "jacket"
-  },
-  {
-    "id": "wool-overcoat",
-    "name": "WOOL OVERCOAT",
-    "gender": "male",
-    "featuredCategory": "shirts",
-    "bestSeller": false,
-    "onSale": false,
-    "price": 11999,
-    "compareAt": null,
-    "image": "https://www.breakout.com.pk/cdn/shop/files/6DSFW667-BLU_4.jpg?v=1779176897&width=840",
-    "category": "upper_body",
-    "garment_type": "coat"
   }
 ];
 
