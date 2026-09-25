@@ -5,7 +5,7 @@
  * Production → AWS Lightsail (Vercel shop calls this)
  */
 const PRODUCTION_API =
-  "https://vton.p12vr5zrn1t66.ap-southeast-1.cs.amazonlightsail.com";
+  "https://container-service-1.p12vr5zrn1t66.ap-southeast-1.cs.amazonlightsail.com";
 
 const isLocal =
   location.hostname === "localhost" || location.hostname === "127.0.0.1";
